@@ -54,7 +54,7 @@ class windowsconfwin(QMainWindow):
         #SFC /Scannow && Dism /RestoreHealth script
     def winscript(self):
         self.winp = QProcess()
-        self.winp.finished.connect(self.winscript_finished)
+        self.winp.finished.connect(self.winscript_finished) #test
         self.winp.start ("winrepair.bat")
 
     def winscript_finished(self):
