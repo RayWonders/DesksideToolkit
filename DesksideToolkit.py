@@ -12,65 +12,65 @@ class Ui(QtWidgets.QMainWindow):
         self.show()
         self.setWindowTitle("Robb's Deskside Toolkit")
 
-        #Slot signal for Headset repairs
+    #Slot signal for Headset repairs
     def headsetconfwin(self):
         self.w = headsetconfwin()
         self.w.show()
         self.hide()
 
-        #slot window for Windows repairs
+    #slot window for Windows repairs
     def windowsconfwin(self):
         self.wcw = windowsconfwin()
         self.wcw.show()
         self.hide()
 
-        #Slot for Manually installed apps
+    #Slot for Manually installed apps
     def manconfwin(self):
         self.mcw = manconfwin()
         self.mcw.show()
         self.hide()
 
+#window to activate DISM/SFC repair w checkbox
 class windowsconfwin(QMainWindow):
     def __init__(self):
         super().__init__()
         self.resize(380, 200)
         self.setWindowTitle("Windows 10 repair (Fingers Crossed)")
 
+        #checkbox for Restart function
         self.winchk = QCheckBox(self)
         self.winchk.setGeometry(55, 140, 450, 55)
         self.winchk.setText('restart when completed? (recommended)')
         self.winchk.setStyleSheet('font-size:15px')
+        self.winchk.clicked.connect(self.btnstate)
 
+        #"Start" Button for SFC/DISM
         self.winstart = QPushButton(self)
         self.winstart.setGeometry(115, 25, 160, 100)
         self.winstart.setText('Start')
-        self.winstart.setStyleSheet('font-size:30px')
+        self.winstart.setStyleSheet('font-size:25px')
+        self.winstart.clicked.connect(self.winscript)
 
-        if self.winchk.isChecked() == True:
-                self.winstart.clicked.connect(self.winscript2)
-        else:
-                self.winstart.clicked.connect(self.winscript)
-
-        #SFC /Scannow && Dism /RestoreHealth script
+    #SFC /Scannow && Dism /RestoreHealth script
     def winscript(self):
-        self.winp = QProcess()
-        self.winp.finished.connect(self.winscript_finished) #test
-        self.winp.start ("winrepair.bat")
+        self.winfix = QProcess()
+        self.winfix.finished == None
+        self.winfix.start ("winrepair.bat")
 
-    def winscript_finished(self):
-        self.winp = None
+    #SFC /Scannow && Dism /RestoreHealth script WITH RESTARTS 
+    def winscript2(self):
+        self.winpwr = QProcess()
+        self.winpwr.finished == None
+        self.winpwr.start ("winshut.bat")
 
-        #SFC /Scannow && Dism /RestoreHealth script with Restart
+    #elif function for "start" based off checkbox
+    def btnstate(self):
+        if self.winchk.isChecked() == True:
+            self.winstart.clicked.connect(self.winscript2)
+        else: 
+            self.winstart.clicked.connect(self.winscript)
 
-    #def winscript2(self):
-        #self.winpwr = QProcess()
-        #self.winpwr.finished.connect(self.winscript2_finished)
-        #self.winpwr.start ("winrepairrestart.bat")
-
-    def winscript2_finished(self):
-        self.winpwr = None
-
-        # Confirmation Window for Headset repairs
+# Confirmation Window for Headset repairs
 class headsetconfwin(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -98,7 +98,7 @@ class headsetconfwin(QMainWindow):
         self.restartlbl.setText('(Your Device will restart when you select "Start")')
         self.restartlbl.setStyleSheet('font-size:16px')
 
-        #Driver Refresh Script Variable
+    #Driver Refresh Script Variable
     def script1(self):
         #if self.p is None: No process Running
         self.p = QProcess()
@@ -108,7 +108,7 @@ class headsetconfwin(QMainWindow):
     def script1_finished(self):
         self.p = None
 
-    #Confirmation window for Manially installed Applications
+#Confirmation window for Manially installed Applications
 class manconfwin(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -131,7 +131,7 @@ class manconfwin(QMainWindow):
         # ZooM Button Event
         self.zoombtn.clicked.connect(self.zoomdownload)
 
-            #Driver Refresh Script Variable
+    #Zoom process to download zoom w URL (purpose of "import Browser")
     def zoomdownload(self):
         #if self.p is None: No process Running
         self.zdown = QProcess()
@@ -140,6 +140,7 @@ class manconfwin(QMainWindow):
     def zoomdownload_finished(self):
         self.zdown = None
 
+    #PowerBI download Process w URL
     def powerbidownload(self):
         #if self.p is None: No process Running
         self.bidown = QProcess()
