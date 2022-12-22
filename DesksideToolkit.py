@@ -81,7 +81,7 @@ class windowsconfwin(QMainWindow):
                 return False
 
         if not is_admin():
-            ctypes.windll.shell32.ShellExecuteW(None, "runas", "cmd.exe", " /C sfc /scannow && DISM /Online /Cleanup-Image /Restorehealth && shutdown /f /r ", None, 1)
+            ctypes.windll.shell32.ShellExecuteW(None, "runas", "cmd.exe", " /C sfc /scannow && DISM /Online /Cleanup-Image /Restorehealth && shutdown /f /r /t 0 ", None, 1)
         else:
             subprocess.call(["cmd.exe", "/C", "sfc", "/scannow"])
 
