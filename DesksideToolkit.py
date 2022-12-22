@@ -1,10 +1,12 @@
 import sys
 import webbrowser
 import subprocess
-import win32con
+import ctypes
 from PyQt5 import QtCore, QtGui, QtWidgets, uic
 from PyQt5.QtCore import QProcess, Qt
 from PyQt5.QtWidgets import QMainWindow, QLabel, QPushButton, QCheckBox
+
+app = QtWidgets.QApplication(sys.argv)
 
 class Ui(QtWidgets.QMainWindow):
     def __init__(self):
@@ -50,23 +52,19 @@ class windowsconfwin(QMainWindow):
         self.winstart.setGeometry(115, 25, 160, 100)
         self.winstart.setText('Start')
         self.winstart.setStyleSheet('font-size:25px')
-        self.winstart.clicked.connect(self.chkboxchange)
+        self.winstart.clicked.connect(self.winscript)
 
         self.winchk.stateChanged.connect(self.chkboxchange)
 
-    def chkboxchange(self, state):
-        if state == Qt.Checked:
+    def chkboxchange(self):
+        if self.winchk.isChecked():
             self.winstart.clicked.disconnect() # Disconnect the clicked signal from all its connections
             # Connect the clicked signal to the winscript2 function
             self.winstart.clicked.connect(self.run_sfc_scannow)
-            self.winstart.clicked.emit()  # emit the clicked signal to run winscript2
-            #input("Press Enter to Continue")    
-
         else:
             self.winstart.clicked.disconnect() # Disconnect the clicked signal from all its connections
             # Connect the clicked signal to the winscript function
             self.winstart.clicked.connect(self.winscript)
-            self.winstart.clicked.emit()  # emit the clicked signal to run winscript
 
     #SFC /Scannow && Dism /RestoreHealth script
     def winscript(self):
@@ -76,16 +74,17 @@ class windowsconfwin(QMainWindow):
 
     #SFC /Scannow && Dism /RestoreHealth script WITH RESTARTS
     def run_sfc_scannow(self):
-        process = subprocess.Popen(["SFC", "/scannow"], creationflags=win32con.CREATE_NEW_CONSOLE)
-        #process.wait()
+        def is_admin():
+            try:
+                return ctypes.windll.shell32.IsUserAnAdmin()
+            except:
+                return False
 
-    # Check the return code
-        if process.returncode != 0:
-            # Handle the error
-            print("Error running SFC /scannow")
-    
-        #input("Enter any key to continue ")
-            
+        if not is_admin():
+            ctypes.windll.shell32.ShellExecuteW(None, "runas", "cmd.exe", " /C sfc /scannow && DISM /Online /Cleanup-Image /Restorehealth && shutdown /f /r ", None, 1)
+        else:
+            subprocess.call(["cmd.exe", "/C", "sfc", "/scannow"])
+
 # Confirmation Window for Headset repairs
 class headsetconfwin(QMainWindow):
     def __init__(self):
@@ -165,6 +164,5 @@ class manconfwin(QMainWindow):
     def powerbidownload_finished(self):
         self.bidown = None
 
-app = QtWidgets.QApplication(sys.argv)
 window = Ui()
 sys.exit(app.exec_())

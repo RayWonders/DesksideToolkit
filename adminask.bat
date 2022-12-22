@@ -27,5 +27,4 @@ if '%errorlevel%' NEQ '0' (
 :gotAdmin
     pushd "%CD%"
     CD /D "%~dp0"
-:--------------------------------------    
- sfc /scannow && DISM /Online /Cleanup-Image /Restorehealth && Shutdown /f /r
+:--------------------------------------
