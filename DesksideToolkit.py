@@ -52,7 +52,7 @@ class windowsconfwin(QMainWindow):
         self.winstart.setGeometry(115, 25, 160, 100)
         self.winstart.setText('Start')
         self.winstart.setStyleSheet('font-size:25px')
-        self.winstart.clicked.connect(self.winscript)
+        self.winstart.clicked.connect(self.run_sfc_scannow)
 
         self.winchk.stateChanged.connect(self.chkboxchange)
 
@@ -60,20 +60,27 @@ class windowsconfwin(QMainWindow):
         if self.winchk.isChecked():
             self.winstart.clicked.disconnect() # Disconnect the clicked signal from all its connections
             # Connect the clicked signal to the winscript2 function
-            self.winstart.clicked.connect(self.run_sfc_scannow)
+            self.winstart.clicked.connect(self.run_sfc_scannow_shutdown)
         else:
             self.winstart.clicked.disconnect() # Disconnect the clicked signal from all its connections
             # Connect the clicked signal to the winscript function
-            self.winstart.clicked.connect(self.winscript)
+            self.winstart.clicked.connect(self.run_sfc_scannow)
 
     #SFC /Scannow && Dism /RestoreHealth script
-    def winscript(self):
-        self.winfix = QProcess()
-        self.winfix.finished == None
-        self.winfix.start('adminask.bat', ['sfc /scannow && DISM /Online /Cleanup-Image /Restorehealth'])
+    def run_sfc_scannow(self):
+        def is_admin():
+            try:
+                return ctypes.windll.shell32.IsUserAnAdmin()
+            except:
+                return False
+
+        if not is_admin():
+            ctypes.windll.shell32.ShellExecuteW(None, "runas", "cmd.exe", " /C sfc /scannow && DISM /Online /Cleanup-Image /Restorehealth ", None, 1)
+        else:
+            subprocess.call(["cmd.exe", "/C", "sfc", "/scannow"])
 
     #SFC /Scannow && Dism /RestoreHealth script WITH RESTARTS
-    def run_sfc_scannow(self):
+    def run_sfc_scannow_shutdown(self):
         def is_admin():
             try:
                 return ctypes.windll.shell32.IsUserAnAdmin()
