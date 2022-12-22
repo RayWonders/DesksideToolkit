@@ -1,8 +1,9 @@
 import sys
 import webbrowser
-from PyQt5 import QtWidgets, uic
-from PyQt5 import QtWidgets
-from PyQt5.QtCore import QProcess 
+import subprocess
+import win32con
+from PyQt5 import QtCore, QtGui, QtWidgets, uic
+from PyQt5.QtCore import QProcess, Qt
 from PyQt5.QtWidgets import QMainWindow, QLabel, QPushButton, QCheckBox
 
 class Ui(QtWidgets.QMainWindow):
@@ -39,37 +40,52 @@ class windowsconfwin(QMainWindow):
 
         #checkbox for Restart function
         self.winchk = QCheckBox(self)
-        self.winchk.setGeometry(55, 140, 450, 55)
+        self.winchk.setGeometry(10, 140, 350, 55)
         self.winchk.setText('restart when completed? (recommended)')
         self.winchk.setStyleSheet('font-size:15px')
-        self.winchk.clicked.connect(self.btnstate)
+        self.winchk.setChecked(False)
 
         #"Start" Button for SFC/DISM
         self.winstart = QPushButton(self)
         self.winstart.setGeometry(115, 25, 160, 100)
         self.winstart.setText('Start')
         self.winstart.setStyleSheet('font-size:25px')
-        self.winstart.clicked.connect(self.winscript)
+        self.winstart.clicked.connect(self.chkboxchange)
+
+        self.winchk.stateChanged.connect(self.chkboxchange)
+
+    def chkboxchange(self, state):
+        if state == Qt.Checked:
+            self.winstart.clicked.disconnect() # Disconnect the clicked signal from all its connections
+            # Connect the clicked signal to the winscript2 function
+            self.winstart.clicked.connect(self.run_sfc_scannow)
+            self.winstart.clicked.emit()  # emit the clicked signal to run winscript2
+            #input("Press Enter to Continue")    
+
+        else:
+            self.winstart.clicked.disconnect() # Disconnect the clicked signal from all its connections
+            # Connect the clicked signal to the winscript function
+            self.winstart.clicked.connect(self.winscript)
+            self.winstart.clicked.emit()  # emit the clicked signal to run winscript
 
     #SFC /Scannow && Dism /RestoreHealth script
     def winscript(self):
         self.winfix = QProcess()
         self.winfix.finished == None
-        self.winfix.start ("winrepair.bat")
+        self.winfix.start('adminask.bat', ['sfc /scannow && DISM /Online /Cleanup-Image /Restorehealth'])
 
-    #SFC /Scannow && Dism /RestoreHealth script WITH RESTARTS 
-    def winscript2(self):
-        self.winpwr = QProcess()
-        self.winpwr.finished == None
-        self.winpwr.start ("winshut.bat")
+    #SFC /Scannow && Dism /RestoreHealth script WITH RESTARTS
+    def run_sfc_scannow(self):
+        process = subprocess.Popen(["SFC", "/scannow"], creationflags=win32con.CREATE_NEW_CONSOLE)
+        #process.wait()
 
-    #elif function for "start" based off checkbox
-    def btnstate(self):
-        if self.winchk.isChecked() == True:
-            self.winstart.clicked.connect(self.winscript2)
-        else: 
-            self.winstart.clicked.connect(self.winscript)
-
+    # Check the return code
+        if process.returncode != 0:
+            # Handle the error
+            print("Error running SFC /scannow")
+    
+        #input("Enter any key to continue ")
+            
 # Confirmation Window for Headset repairs
 class headsetconfwin(QMainWindow):
     def __init__(self):
@@ -151,4 +167,4 @@ class manconfwin(QMainWindow):
 
 app = QtWidgets.QApplication(sys.argv)
 window = Ui()
-app.exec_()
+sys.exit(app.exec_())
