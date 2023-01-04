@@ -1,0 +1,505 @@
+			Revision History
+			Q78 ROM Family
+
+
+Models Supported:	HP EliteBook 830 G5 Notebook PC
+					HP EliteBook 836 G5 Notebook PC
+					HP EliteBook 840 G5 Healthcare Edition Notebook PC
+					HP EliteBook 840 G5 Notebook PC
+					HP EliteBook 846 G5 Healthcare Edition Notebook PC
+					HP EliteBook 846 G5 Notebook PC
+					HP EliteBook 850 G5 Notebook PC
+					HP ZBook 14u G5 Mobile Workstation
+					HP ZBook 15u G5 Mobile Workstation
+
+Version 01.20.00
+ENHANCEMENTS:  
+- Enhancement to address security vulnerabilities CVE-2022-23924, CVE-2022-23925, CVE-2022-23926, CVE-2022-23927, CVE-2022-23928, CVE-2022-23929, CVE-2022-23930, CVE-2022-23931, CVE-2022-23932, CVE-2022-23933, CVE-2022-23934.
+- Enhancement to address security vulnerabilities CVE-2022-23953, CVE-2022-23954, CVE-2022-23955, CVE-2022-23956, CVE-2022-23957, CVE-2022-23958.
+- Remove physical presence interface pops up when changing the "Intel Software Guard Extensions (SGX)" setting from "Software control" to "Disable".
+- Enhancement to address security vulnerabilities CVE-2022-21166, CVE-2022-21125, CVE-2022-21123, CVE-2022-21127, CVE-2022-21151, CVE-2022-0005.
+- Enhancement to address security vulnerabilities CVE-2022-0004, CVE-2021-33159.
+
+- Includes the following firmware:
+AMD vBIOS 14/15W, version SWBRT27514.001
+AMD vBIOS 14/15P, version SWBRT27511.001
+Embedded Controller (EC), version 04.6D.00
+Intel GOP, version 9.0.1071,A.7
+Intel Management Engine (Corporate), version 11.8.92.4222
+Intel vBIOS, version 9.0.1051,A.4
+Intel/Realtek PXE ROM IBA CL, version 0.1.12
+Intel/Realtek UEFI PXE ROM - Intel, version 0.0.18
+Intel/Realtek UEFI PXE ROM - DisplayLink, version NR-133082-LS-1
+Intel/Realtek UEFI PXE ROM - Realtek, version 2.025
+USB Type-C Power Delivery (PD) Firmware, version 7.11
+
+FIXES:  
+
+PCR0 (TPM2.0) = E71157762EB9126D7395E9AB1B38526C70EF92900CC2109DAE5F7743094A17FD
+
+Version 01.19.20
+ENHANCEMENTS:  
+- Enhancement to address security vulnerabilities CVE-2022-23924, CVE-2022-23925, CVE-2022-23926, CVE-2022-23927, CVE-2022-23928, CVE-2022-23929, CVE-2022-23930, CVE-2022-23931, CVE-2022-23932, CVE-2022-23933, CVE-2022-23934.
+- Enhancement to address security vulnerabilities CVE-2022-23953, CVE-2022-23954, CVE-2022-23955, CVE-2022-23956, CVE-2022-23957, CVE-2022-23958.
+
+- Includes the following firmware:
+AMD vBIOS 14/15W, version SWBRT27514.001
+AMD vBIOS 14/15P, version SWBRT27511.001
+Embedded Controller (EC), version 04.6D.00
+Intel GOP, version 9.0.1071,A.7
+Intel Management Engine (Corporate), version 11.8.90.3987
+Intel vBIOS, version 9.0.1051,A.4
+Intel/Realtek PXE ROM IBA CL, version 0.1.12
+Intel/Realtek UEFI PXE ROM - Intel, version 0.0.13
+Intel/Realtek UEFI PXE ROM - DisplayLink, version NR-133082-LS-1
+Intel/Realtek UEFI PXE ROM - Realtek, version 2.025
+USB Type-C Power Delivery (PD) Firmware, version 7.11
+
+FIXES:  
+
+PCR0 (TPM2.0) = EE54DDB74755C5E82035810239DD61D23EAECA9746B94EF27A086D43CD663A11
+
+Version 01.19.00
+ENHANCEMENTS:  
+- Enhancement to address security vulnerabilities CVE-2021-3808, CVE-2021-3809. 
+- Enhancement to address security vulnerabilities CVE-2021-39297, CVE-2021-39299, CVE-2021-39300, CVE-2021-39301. 
+
+- Includes the following firmware:
+AMD vBIOS 14/15W, version SWBRT27514.001
+AMD vBIOS 14/15P, version SWBRT27511.001
+Embedded Controller (EC), version 04.6D.00
+Intel GOP, version 9.0.1071,A.7
+Intel Management Engine (Corporate), version 11.8.90.3987
+Intel vBIOS, version 9.0.1051,A.4
+Intel/Realtek PXE ROM IBA CL, version 0.1.12
+Intel/Realtek UEFI PXE ROM - Intel, version 0.0.13
+Intel/Realtek UEFI PXE ROM - DisplayLink, version NR-133082-LS-1
+Intel/Realtek UEFI PXE ROM - Realtek, version 2.025
+USB Type-C Power Delivery (PD) Firmware, version 7.11
+
+FIXES:  
+
+PCR0 (TPM2.0) = C59C13EBAF9D27D6361165CA77908BBC6D3AE2EB7AA1567886C86FFD1F3A2C3E
+
+Version 01.18.01
+ENHANCEMENTS:  
+- Addresses security vulnerabilities CVE-2021-0127.
+- Addresses security vulnerabilities CVE-2021-0156, CVE-2021-0157.
+- Addresses security vulnerabilities CVE-2021-33107.
+- Updates the Management Engine Firmware to version 11.8.90.3987.
+- Changes the default setting of HP Battery Health Manager in the BIOS Settings to optimize battery health. For more information, visit https://support.hp.com/us-en/document/ish_5084029-5084079-16.
+
+- Includes the following firmware:
+AMD vBIOS 14/15W, version SWBRT27514.001
+AMD vBIOS 14/15P, version SWBRT27511.001
+Embedded Controller (EC), version 04.6D.00
+Intel GOP, version 9.0.1071,A.7
+Intel Management Engine (Corporate), version 11.8.90.3987
+Intel vBIOS, version 9.0.1051,A.4
+Intel/Realtek PXE ROM IBA CL, version 0.1.12
+Intel/Realtek UEFI PXE ROM - Intel, version 0.0.13
+Intel/Realtek UEFI PXE ROM - DisplayLink, version NR-133082-LS-1
+Intel/Realtek UEFI PXE ROM - Realtek, version 2.025
+USB Type-C Power Delivery (PD) Firmware, version 7.11
+
+FIXES:  
+- Fixes an issue where the battery charge LED indicator light changes from amber to white when the battery is charged only to 88% of capacity.
+- Fixes an intermittent issue where Bitlocker does not unlock properly over a network using a certain network configuration.
+- Fixes an issue where the system stops functioning at the Network BIOS Update screen after a network connection check is executed and Update System BIOS is triggered using the F10 setup menu in legacy boot mode.
+
+PCR0 (TPM2.0) = D6014D78BDCDED1F0F521CD0B72525F9742A1CBEBA73B5AD154053A744D6DE17
+
+Version 01.17.00
+ENHANCEMENTS:  
+- Updates the battery capacity icon display when Maximize My Battery Health is set in the F10 settings and the battery is fully charged.
+
+- Includes the following firmware:
+Intel Management Engine (Corporate), version 11.8.86.3877
+Embedded Controller (EC), version 04.6C.00
+Intel vBIOS, version 9.0.1051,A.4
+AMD vBIOS 14/15W, version SWBRT27514.001
+AMD vBIOS 14/15P, version SWBRT27511.001
+Intel GOP, version 9.0.1071,A.7
+USB Type-C Power Delivery (PD) Firmware, version 7.11
+Intel/Realtek PXE ROM IBA CL, version 0.1.12
+Intel/Realtek UEFI PXE ROM - Intel, version 0.0.13
+Intel/Realtek UEFI PXE ROM - DisplayLink, version NR-133082-LS-1
+Intel/Realtek UEFI PXE ROM - Realtek, version 2.025
+
+FIXES:  
+- Fixes an issue where the display of certain BIOS settings or help messages are incomplete when the language setting is changed to non-English language in the F10 menu.
+-Fixes issue where an error message pops up (0x8007054F) while enable Power-On Authentication if user account name longer than 11 characters.
+- Fixes an issue where the current and new version numbers in the HP Firmware Update and Recovery tool are reversed.
+
+PCR0 (TPM2.0) = 2FD275E082065B0420D9DC3CF50A056C081AF35E849B09C86AA8049E323E165E
+
+Version 01.16.00
+ENHANCEMENTS:  
+- Enhancement to address security vulnerabilities CVE-2020-8704, CVE-2020-24506 and CVE-2020-24507. 
+- "Adds a feature ""IPv6 during UEFI Boot"" in F10 setup interface where user has ability to disable IPv6 during preboot phase.
+- Enhancement to address security vulnerabilities CVE-2020-8670. 
+- Enhancement to address security vulnerabilities CVE-2020-24512. 
+
+- Includes the following firmware:
+Intel Management Engine (Corporate), version 11.8.86.3877
+Embedded Controller (EC), version 04.6B.00
+Intel vBIOS, version 9.0.1051,A.4
+AMD vBIOS 14/15W, version SWBRT27514.001
+AMD vBIOS 14/15P, version SWBRT27511.001
+Intel GOP, version 9.0.1071,A.7
+USB Type-C Power Delivery (PD) Firmware, version 7.11
+Intel/Realtek PXE ROM IBA CL, version 0.1.12
+Intel/Realtek UEFI PXE ROM - Intel, version 0.0.13
+Intel/Realtek UEFI PXE ROM - DisplayLink, version NR-133082-LS-1
+Intel/Realtek UEFI PXE ROM - Realtek, version 2.025
+
+FIXES:  
+- Fixes issue where Security Device Error message pop out after enable Power-on Password."
+
+PCR0 (TPM2.0) = D18ED74D5D7E57567D8FE55984DA0D441067F0837192066FD46F4368768CE17B
+
+Version 01.15.00
+ENHANCEMENTS:  
+- CCG5 v7.11 Fixed an interoperability issue seen with an Apple XDR monitor.CCG5 v7.11 Fixed an issue that is observed with Audio accessory devices with a failure rate. 
+- Update Intel Managemnet Engine Firmware to 11.8.82.3838.
+- Includes the following firmware:
+
+Intel Management Engine (Corporate), version 11.8.82.3838
+Embedded Controller (EC), version 04.6B.00
+Intel vBIOS, version 9.0.1051,A.4
+AMD vBIOS 14/15W, version SWBRT27514.001
+AMD vBIOS 14/15P, version SWBRT27511.001
+Intel GOP, version 9.0.1071,A.7
+USB Type-C Power Delivery (PD) Firmware, version 7.11
+Intel/Realtek PXE ROM IBA CL, version 0.1.12
+Intel/Realtek UEFI PXE ROM - Intel, version 0.0.13
+Intel/Realtek UEFI PXE ROM - DisplayLink, version NR-133082-LS-1
+Intel/Realtek UEFI PXE ROM - Realtek, version 2.025
+
+FIXES:  
+- Fixes issue where system entering MEBX(Intel  Management Engine BIOS Extension) menu when press "ESC +6" key on server side.
+- Fixes an issue where updating the BIOS from an older version causes the Battery Health Manager setting to change from "Maximize my battery health" to "Let HP manage my battery charging."
+- Fixes an issue where the HP System Information window is displayed when the F3/F4 + ESC keys are pressed at the same time
+
+PCR0 (TPM2.0) = 91A9F35C2B732E8AB511E0DC054FD1B60C1C81C4ECE609121FACE64B3228A755
+
+Version 01.14.01
+ENHANCEMENTS:  
+- Enhancement to address security vulnerabilities CVE-2020-8696, CVE-2020-8695, CVE-2020-8694.
+- Enhancement to address security vulnerabilities CVE-2020-8745, CVE-2020-8746, CVE-2020-8747, CVE-2020-8749, CVE-2020-8751, CVE-2020-8752, CVE-2020-8753, CVE-2020-8754, CVE-2020-8756, CVE-2020-8757, CVE-2020-8705, CVE-2020-12297, CVE-2020-12303, CVE-2020-12355, CVE-2020-12356.
+
+- Updates the Intel silicon reference code to 3.8.1.
+- Adds a feature "HP Sure Admin" support in F10 setup interface.
+NOTE: Due to HP Sure Admin feature support, system is not compatible with older BIOS version once it is enabled, attempts to install older BIOS versions will be blocked.
+- Adds public WMI support to get battery information via third party software. 
+
+- Includes the following firmware:
+
+Intel Management Engine (Corporate), version 11.8.81.3781
+Embedded Controller (EC), version 04.6A.00
+Intel vBIOS, version 9.0.1051,A.4
+AMD vBIOS 14/15W, version SWBRT27514.001
+AMD vBIOS 14/15P, version SWBRT27511.001
+Intel GOP, version 9.0.1071,A.7
+USB Type-C Power Delivery (PD) Firmware, version 7.10
+Intel/Realtek PXE ROM IBA CL, version 0.1.12
+Intel/Realtek UEFI PXE ROM - Intel, version 0.0.13
+Intel/Realtek UEFI PXE ROM - DisplayLink, version NR-133082-LS-1
+Intel/Realtek UEFI PXE ROM - Realtek, version 2.026
+
+FIXES:  
+- Fixes issue where user press F3 or F4 +ESC repeatedly, the HP System Info will launch automatically. 
+- Fixes issue where Windows Hotkey functions are activated (Win+Q/W/E...)when press keys "Q/W/E..." after press F1 to F5 continuously. 
+-"Critical Security Update.
+- Fixes issue where Secure Erase cannot be executed when Display Language change to non-English.
+- Fixes issue where system takes long time to resume from sleep when Video Memory change to 512 MB." 
+- Fixes issue where system unexpected pops up "HP Sure start Recovery" screen when "Sure Start BIOS Setting Protection" is enabled. 
+- Fixes issue where system unexpected auto wake up from sleep when USB dock attached through USB-C port.
+
+PCR0 (TPM2.0) = CEAA122BD5802C45D7E23DEE85F09F4446D9D88E88C7A1E23C72D85125AEBB99
+
+Version 01.12.00
+ENHANCEMENTS:  
+- Addresses security vulnerabilities CVE-2020-0543, CVE-2020-0548, CVE-2020-0549.
+- Addresses security vulnerabilities CVE-2020-8758.
+- Addresses security vulnerabilities CVE-2020-8672.
+- Updates the Intel reference code to version 3.8.0.
+- Adds the Wake on LAN Power-on Password Policy feature in F10 setup interface.
+- Adds the Allow User to Modify Power-on Password feature in F10 setup interface.
+
+- Includes the following firmware:
+
+Intel Management Engine (Corporate), version 11.8.79.3722
+Embedded Controller (EC), version 04.68.00
+Intel vBIOS, version 9.0.1051,A.4
+AMD vBIOS 14/15W, version SWBRT27514.001
+AMD vBIOS 14/15P, version SWBRT27511.001
+Intel GOP, version 9.0.1071,A.7
+USB Type-C Power Delivery (PD) Firmware, version 7.10
+Intel/Realtek PXE ROM IBA CL, version 0.1.12
+Intel/Realtek UEFI PXE ROM - Intel, version 0.0.13
+Intel/Realtek UEFI PXE ROM - DisplayLink, version NR-133082-LS-1
+Intel/Realtek UEFI PXE ROM - Realtek, version 2.026
+
+FIXES:  
+- Fixes an issue where the system unexpectedly displays an error message when the system is hot plugged into a docking monitor using a USB Type-C cable after resuming from sleep (S4) mode.
+- Fixes an issue on a system that enters sleep (S3), hibernate (S4), or system off (S5) while connected to an HP USB-C Travel Hub G2 where the power LED indicator light remains on.
+- Fixes an issue where device connected to a Thunderbolt dock does not function properly when the system resumes from hibernation or system off.
+- Fixes an intermittent issue where the WWAN does not function properly.
+- Fixes an issue where the text of the Physical Presence Interface display is incomplete when the language setting is changed to a non-English language.
+- Fixes an issue which causes the system to stop functioning when an EFI folder is created in the Recovery partition.
+- Fixes an issue where the Physical Presence Interface cannot be disabled when the language setting is changed to a non-English language.
+- Fixes an issue where the original boot entry is deleted when a third-party encryption software creates a boot entry.
+- Fixes an issue where the Automatic DriveLock option is enabled and greyed out after the BIOS Administrator Password is removed.
+- Fixes an issue where the system does not boot properly after the BIOS update is scheduled via the F10 setup interface and Postpone this BIOS until the next Reboot is selected.
+
+PCR0 (TPM2.0) = 40A7E7376847E3CE5775DC85D621A6DFC4B88272A8B511F3313196BA53CFFBC7
+
+Version 01.11.01
+ENHANCEMENTS:  
+- Enhancement to address security vulnerabilities CVE-2020-0528, CVE-2020-0529.
+- Enhancement to address security vulnerabilities CVE-2020-0531, CVE-2020-0532, CVE-2020-0533, CVE-2020-0535, CVE-2020-0536, CVE-2020-0537, CVE-2020-0538, CVE-2020-0539, CVE-2020-0540, CVE-2020-0541, CVE-2020-0545.
+- Changes the default setting of the HP Battery Health Manager in the BIOS Settings from Maximize My Battery Duration to Let HP Manage My Battery Health. The new default setting dynamically changes how the system charges the battery based on usage conditions over time to provide optimal battery health.
+- Adds DriveLock password feature support for the OPAL SED NVMe SSD.
+
+- Includes the following firmware:
+
+Intel Management Engine (Corporate), version 11.8.77.3664
+Embedded Controller (EC), version 04.67.00
+Intel vBIOS, version 9.0.1051,A.4
+AMD vBIOS 14/15W, version SWBRT27514.001
+AMD vBIOS 14/15P, version SWBRT27511.001
+Intel GOP, version 9.0.1071,A.7
+USB Type-C Power Delivery (PD) Firmware, version 7.10
+Intel/Realtek PXE ROM IBA CL, version 0.1.12
+Intel/Realtek UEFI PXE ROM - Intel, version 0.0.13
+Intel/Realtek UEFI PXE ROM - DisplayLink, version NR-133082-LS-1
+Intel/Realtek UEFI PXE ROM - Realtek, version 2.026
+
+FIXES:  
+- Fixes an issue where the Realtek USB controller on a E27d/E24d G4 Docking Monitor is not listed in Device Manager after a Wake-on-LAN request resumes the system from a sleep (S3) or hibernation (S4) state or powers on the system.
+- Fixes an issue that occurs on a system that has been restarted several times with Automatic Drivelock enabled where the system unexpectedly displays the message, Enter current DriveLock Password.
+- Fixes an issue where the Automatic DriveLock option is enabled and greyed out after the BIOS Administrator Password is removed.
+- Fixes an issue where the original boot entry is deleted when a third-party encryption software creates a boot entry.
+- Fixes an issue where system firmware is updated from the recovery partition instead of the EFI partition.
+- Fixes an issue that occurs after the Master password is forced to match the BIOS Administrator password where hard drive continues to prompt for the DriveLock password.
+- Fixes an issue that occurs on a hard drive that has the Automatic DriveLock option enabled where Automatic DriveLock cannot be enabled after the hard drive has been put into another system and the Automatic DriveLock option is disabled by the other system.
+- Fixes an issue on a system with an NVMe SSD where the Automatic DriveLock option cannot be enabled after a BIOS Administrator password is set in the in F10 menu.
+- Fixes an issue where the system does not prompt for Power on Authentication with BIOS Administrator and POST Power-On Password options when a scheduled update check fails.
+- Fixes an intermittent issue which causes the system to shutdown unexpectedly when the battery is in the shipping mode state and the power button is pressed too soon (within 5 seconds) after the system is connected to an AC adapter.
+- Fixes an issue where system boots to the network slower than expected.
+- Fixes an issue where the keyboard does not function properly on the BitLocker interface.
+- Fixes an issue where an item is listed in the USB Type-C Controller Firmware Update in the BCU (BIOS Configuration Utility) dump.
+
+PCR0 (TPM2.0) = 2B879AFEED7C64B37508C1A1BCB1B7EE67AF265CF581EBA2967D169EB66C1D5E
+
+
+
+Version 01.10.01
+ENHANCEMENTS:  
+- Provides HP Fan Control Optimization which improves fan noise experienced during typical system usage.
+- Adds a feature in the F10 setup interface to support Automatic DriveLock for Pyrite NVMe SSD.
+- Updates the CPU microcode for Intel processors to version 0xCA.
+- Updates the Intel silicon reference code to version 3.7.5 to enhance compatibility.
+
+- Includes the following firmware:
+
+Intel Management Engine (Corporate), version 11.8.70.3626
+Embedded Controller (EC), version 04.65.00
+Intel VBIOS, version 9.0.1051,A.4
+AMD VBIOS 14/15W, version SWBRT27514.001
+AMD VBIOS 14/15P, version SWBRT27511.001
+Intel GOP, version 9.0.1071,A.7
+USB Type-C PD Firmware, version 7.10
+Intel/Realtek PXE ROM IBA CL, version 0.1.12
+Intel/Realtek UEFI PXE ROM - Intel, version 0.0.13
+Intel/Realtek UEFI PXE ROM - DisplayLink, version NR-133082-LS-1
+Intel/Realtek UEFI PXE ROM - Realtek, version 2.05
+
+FIXES:  
+- Fixes an issue where the special symbol display is not correct if the F10 setup interface is changed to the Russian language.
+- Fixes an issue which causes the system to boot slower than expected when a network cable is used to connect the system to a Dell or a Targus USB Display Link Dock. 
+- Fixes an issue that occurs on a system that is configured to run updates from a proxy server. The BIOS does not update and the system displays the error message, Failed to determine if new BIOS is available, when the update is run without setting the Proxy Server in F10 setup interface.
+- Fixes an issue where the system prompts for Power on Authentication with BIOS Administrator and POST Power-On Password options before a scheduled BIOS update is run.
+- Fixes an issue where the Power Delivery (PD) and Management Engine (ME) update progress bar displays the incorrect percentage when the firmware update is run.
+- Fixes an issue where the batteries do not recharge properly when the system is continuously connected to an AC power source. 
+- Fixes an issue where extra characters are incorrectly displayed in the help message of the Intel Management Engine (ME) option.
+- Fixes an issue that occurs after factory defaults are applied in the F10 setup interface and the system is restarted. The battery does not recharge and the system continues to report that the power adapter is connected.
+- Fixes an issue where the PD (Power Delivery) update fails during an update of the system firmware.
+- Fixes an issue where Sure View is disabled after exiting from the F10 setup interface.
+
+
+PCR0 (TPM2.0) = 44BE25BE56F3CFE3CD41CEAD4FCF96311A6662ED83D3CBF84755113F04BCBE4A
+
+
+Version 01.09.01
+ENHANCEMENTS:  
+- Enhancement to address security vulnerabilities CVE-2019-0131, CVE-2019-0166, CVE-2019-0168, CVE-2019-0169, CVE-2019-11087, CVE-2019-11088, CVE-2019-11090, CVE-2019-11097, CVE-2019-11100, CVE-2019-11101, CVE-2019-11102, CVE-2019-11104, CVE-2019-11106, CVE-2019-11109, CVE-2019-11110, CVE-2019-11131, CVE-2019-11132, CVE-2019-11147.
+- Enhancement to address security vulnerabilities CVE-2019-0123, CVE-2019-0117.
+- Enhancement to address security vulnerabilities CVE-2019-0154.
+- Enhancement to address security vulnerabilities CVE-2019-0124.
+- Enhances the Battery Health Manager feature to prevent battery swelling by controlling the battery charging behavior based on system usage.
+- Updates the Cypress PD firmware to v7.10 to provide enhanced compatibility.
+- Enhancement to address security vulnerabilities CVE-2019-0185.
+- Enhancement to address security vulnerabilities CVE-2019-0123, CVE-2019-0117, CVE-2019-11135, CVE-2019-11139.
+
+- Provides the following firmware:
+
+Intel Management Engine v11.8.70.3626
+Embedded Controller (EC) v04.60.00
+Intel VBIOS v9.0.1051
+AMD VBIOS 14/15W v27514.001
+AMD VBIOS 14/15P v27511.001
+Intel GOP v9.0.1071
+USB Type-C PD firmware v7.10
+Intel/Realtek PXE ROM v0.1.12
+Intel/Realtek UEFI PXE ROM v0.0.13
+
+FIXES:  
+- Fixes an issue that occurs after the Management Engine (ME) protected password is set and then the ME is updated (flashed) over 50% where the system displays the message, correct password entered.
+- Fixes an issue where the system stops functioning (hangs) after the BIOS is flashed when Trusted Execution Technology (TXT) is enabled and performs a Trusted Boot (TBOOT).
+- Fixes an issue where PCR1 values are changed after performing a cold boot or when the system is restarted.
+- Fixes an intermittent issue where the system does not recharge properly when the system is connected to a dock with an HP 223D monitor connected to the system via a USB Type-C cable.
+- Fixes an issue where system fan noise is louder than expected when the system is running with 100% CPU usage.
+
+PCR0 (TPM2.0) = 15504FFDD4C731F2B1852833D4C96DE93C9D4EDFBAD833CE9AC4DB63E6B1CBBF
+
+Version 01.08.01
+ENHANCEMENTS:  
+- Adds an option in the F10 setup to download and install BIOS updates automatically without prompts.
+- Adds the Native OS Firmware Update Service feature to the F10 setup interface to enable and disable firmware updates using the Window Update service.
+- Updates the Cypress PD firmware to v7.9.
+- Provides separate controls for Intel Management Engine (ME) and Intel Active Management (AMT).
+- Updates the Intel silicon reference code to v3.6.7.1.
+
+FIXES:  
+- Fixes an issue where the system cannot exit MEBx (F6) by pressing the Y or N key when the language is set to Russian/Deutsch in F10. 
+- Fixes an issue where the BIOS administrator account cannot be hidden on the Power-On Authentication screen.
+- Fixes an issue which causes the system to power on slower than expected when an NVIDIA GeForce RTX 2070/2080 Graphics card is installed on the system.
+- Fixes an issue where the display of the TPM Firmware Update interface is cut off during the update process.
+- Fixes an issue that occurs when a system has the BIOS password enabled in the F10 setup and Power-on Authentication is enabled in HPCSM. After the BIOS Administrator at Power-on-Authentication option is subsequently deselected in the F10 setup interface, the system displays the message, Authentication Failed.
+- Fixes an issue where the SystemDiags.log file cannot be created in the FTP server after Remote HP PC Hardware Diagnostics are executed.
+- Fixes an issue that occurs when the update schedule is set to daily/weekly/monthly where a BIOS update via the F10 setup interface fails and the system displays the message, Internal error.
+- Fixes an issue where a bootable USB storage device on an external dock connected to the system is not detected in the F9 boot menu.
+- Fixes an issue on a system connected to an HP Elite USB-C Dock where the system does not wake when the power button on the dock is pressed when the lid on the system is closed.
+- Fixes an issue where the system does not run a Type-C PD firmware update properly when the system is connected to an HP Thunderbolt Dock.
+- Fixes an intermittent issue which causes the touch to stop functioning properly when Fast Startup is disabled and the system resumes from a shutdown state.
+- Fixes an issue where SecureView fails to boot after installation. 
+- Fixes an issue where certain devices add support for the HP USB-C Dock G5. 
+- Fixes an issue on a system connected to an HP E223d/E243d Docking Monitor with a USB Type-C cable where the system battery does not charge and the monitor does not display properly.
+
+PCR0 (TPM2.0) = 143C0A9D61C736975F34B09BCD35E37EDC5C3183DACDAA72C0A786FCBCCC2354
+
+Version 01.07.00
+            - Locks the power button function from being used during the Trusted Platform Module (TPM) firmware update process to prevent firmware corruption.
+            - Adds the HP Application Driver feature to the F10 setup interface to support the HP Fusion application.
+            - Adds a feature to enable high resolution mode when the system is connected to a USB Type-C DisplayPort alt mode dock.
+            - Adds support for the 19.5V USB Type-C PD (power delivery) profile.
+            - Updates the Type-C PD (power delivery) controller firmware to v7.8.
+            - Enhancement to address security vulnerabilities CVE-2018-12126, CVE-2018-12127, CVE-2018-12130.
+            - Enhancement to address security vulnerabilities CVE-2019-0086, CVE-2019-0091, CVE-2019-0092, CVE-2019-0093, CVE-2019-0094, CVE-2019-0096.
+            - Fixes an issue where the F6 Management Engine BIOS Extension Options (MEBx) menu does not exit after the Y or N key is pressed when setting the language to Russian or Deutsch in the F10 setup menu.
+            - Fixes an issue where the keyboard drop-down menu continues to be displayed in the English language at the Power-On Authentication page after the keyboard layout is changed to a non-English language and the standard user is selected with the new password at the Power-On Authentication page.
+            - Fixes an issue where the IPv4 option is missing from the Boot Order options after the BIOS is updated by the Network BIOS Update.
+            - Fixes an issue where a legacy bootable disk connected to the system cannot be found after a USB LAN dongle is hot plugged to the system and then the Ctrl+Alt+Del key combination is pressed to boot to the F9 boot menu.
+            - Fixes an issue where a system with a Pyrite SSC V2.0 NVMe drive does not power on properly after DriveLock is enabled and is then disabled.
+            - Fixes an issue where Continue Boot is not translated in the startup menu after the language is set to Russian in the F10 setup menu.
+            - Fixes an issue which causes the display to flicker or to display vertical lines when the system is being powered on.
+            - Fixes an issue where the system is unable to PXE boot over IPv4 when the MAC Address Pass Through (MAPT) is set.
+            - Fixes an intermittent issue where the system does not recover BIOS identity data.
+
+            PCR0 (TPM2.0) = 263B7DDF68D1C22CBDA03AF4D69395155BFFA6C1194E0BE6D99B3698300B02EA
+            
+Version 01.06.00    - Fixes an issue where BitLocker cannot be unlocked over a network.
+            - Fixes an issue where the system updates firmware from the EFI partition of system drive instead of a USB drive connected to the system when Update System and Supported Device Firmware Using Local Media is selected from the BIOS setup (F10).
+            - Fixes an issue where the virtual touch keyboard continues to be displayed in the HP logo screen after the correct PIN code is entered.
+            - Fixes an issue where changes made in the BIOS Setup (F10) after a failed PXE boot are not saved.
+            - Fixes an issue where the system hangs in the Power-On Self-Test (POST) when an Apple USB-C HDMI/VGA Multiport Adapter is connected to the system.
+            - Fixes an issue where a BIOS update initiated by Windows Update does not install after input the incorrect Admin password is initially input followed by the correct password.
+            - Fixes an issue where the system continues to update the Management Engine and Cypress PD Firmware after the incorrect BIOS administrator password is entered.
+            - Fixes an issue where Absolute Persistence does not function properly while HP Sure Run is activated. 
+            - Fixes an issue which causes the audio output to be distorted while a third party AC adapter is being connected to the system.
+            - Fixes an issue where remote diagnostic does not function properly and the system displays the error message, Could not detect network link or network cable is unplugged.
+            - Fixes an issue where the Wake on USB option continues to be displayed in the BIOS setup (F10) for a configuration does not support the use of an external USB.
+            - Fixes an issue where a scheduled power-on function continues to function when the system is running in battery mode.
+            - Fixes an issue where the system is unable to PXE boot over IPv4 when the MAC Address Pass Through (MAPT) is set.
+            - Fixes an issue where system unexpected displays the message, HP recommends using an HP power source, when the system is connected to a 45W HP Type-C adaptor.
+            - Fixes an issue where a WWAN device connected to the system cannot be detected after the WWAN device is disabled in BIOS setup (F10) and an ungraceful shutdown (unsafe or sudden shutdown) occurs.
+            - Fixes an issue where the Management Engine firmware update process stops running when the system is connected to an HP Thunderbolt Dock during the update process.
+            - Fixes an issue where the Physical Presence Interface continues to be displayed when Intel SGX is disabled in BIOS setup (F10) with the Physical Presence Interface setting disabled.
+            - Fixes an issue on a system running a Brazilian keyboard where multiple characters are unexpectedly generated when a single key is pressed.
+            - Fixes an issue where the HP Easy Clean application does not close properly when system the resumes from hibernation after system enters hibernation when the lid is closed.
+
+            - Provides support for the Russian Language in the F10 setup interface.
+            - Adds a feature to hide the BIOS administrator account in the Power-On Authentication screen.
+            - Improves the touch keyboard layout in the Japanese language.
+            - Increases the PXE IP time-to-live (TTL) value to improve compatibility with diverse network environments.
+            - Provides support for the Drivelock password feature on a Pyrite NVMe SSD.
+            - Updates the CPU microcode for Intel processors to 0x9A.
+            - Updates the Intel silicon reference code for enhanced compatibility.
+            - Adds a feature in BIOS setup (F10), Launch Hotkeys without pressing the function (Fn) key.
+            - Updates the Cypress PD firmware to provide enhanced compatibility for USCI and USB Type-C charging.
+            - Enhancement to address security vulnerabilities CVE-2018-12201, CVE-2018- 12202, CVE-2018-12203, CVE-2018-12204, and CVE-2018-12205.
+            - Enhancement to address security vulnerabilities CVE-2018-12188, CVE-2018-12189, CVE-2018-12190, CVE-2018-12191, CVE-2018-12192, CVE-2018-12199, CVE-2018-12198, CVE-2018-12200, CVE-2018-12187, CVE-2018-12196, CVE-2018-12185, and CVE-2018-12208.
+
+            PCR0 (TPM2.0) = 13CCE12CD68C49BBDA28ADCC9AA49E1439DF756511AF303271831C95C1CA4643
+
+
+Version 01.04.00	- Fixes an issue where the system stops functioning (hangs) and displays a black screen and the fan runs at full speed when the system is restarted. 
+			- Fixes an issue where the system does not power on properly when an Apple USB-C HDMI/VGA is connected to the system using the multiport adapter.
+			- Fixes an issue on a system with Thunderbolt devices attached where the system auto wakes when the Thunderbolt Type-C Ports are disabled in F10 BIOS setup menu.
+			- Fixes an issue where the Thunderbolt PCIe Hot Plug Mode option is not disabled after the Thunderbolt alt mode is disabled in the F10 BIOS setup menu.
+			- Fixes an issue where the system continues to update Management Engine and CCG5 firmware after the incorrect BIOS administrator password is entered while a BIOS update is run.
+			- Fixes an issue where the system stops functioning (hangs) and displays a black screen when the system resumes from S3 (sleep) mode while connected to a Thunderbolt external graphics (eGFX) device.
+			- Fixes an issue where the Schedule Power-On feature continues to function when the system is running in DC mode.
+			- Fixes an issue where the Wake on USB option continues to be available in the F10 setup menu when the system has blocked external USB devices.
+
+			- Adds support for Thunderbolt Runtime D3 (RTD3) mode.
+			- Adds support for HP Easy Clean 1.1 (HPEC 1.1) on HealthCare series systems.
+
+			PCR0 (TPM2.0) = 8182B46CA31F88C48F9CE77E64CDB60BCDF1497DF1D9FA0BAFB82D61D8165E72
+
+Version 01.03.00 	- Fixes an issue where the function keys in POST do not function properly after deploy system via SCCM (Systems Center Configuration Manager).
+			- Fixes an issue where the system stops functioning (hangs) when the system is restarted after the system is connected to an ABKO K6000 mechanical keyboard.
+			- Fixes an issue where system stops functioning (hangs) during POST when an EMDEP USB analyzer is run on the system.
+			- Fixes an issue where custom Secure Boot keys do not import properly into the Linux OS.
+			- Fixes an issue with a Toshiba NVMe SSD installed where the system stops functioning after Secure Erase is run on the drive.
+			- Fixes an issue where OPAL Hard Drive Authentication PPIs continually appear when OPAL Hard Drive SID Authentication, the Sure Start BIOS Settings Protection option, and the Physical Presence Interface option are enabled at the same time.
+			- Fixes an issue where the values of Remote HP PC Hardware Diagnostics cannot be restored to default values after BIOS is reset using, Apply factory defaults and exit.
+			- Fixes an issue where the Secure Boot Configuration is set to Legacy Support Disabled and Secure Boot Enabled after Reset Secure Boot keys to factory defaults is run.
+			- Fixes an issue where the system stops functioning when CustomLogoApp.efi is run in UEFI mode and BIOS the password is set.
+			- Fixes an issue where attempting to update the system using the F10 setup interface with Custom URL causes an error and the system displays the message, Failure during data transfer (internal error).
+			- Fixes an issue where the Dynamic Platform and Thermal Framework (DPTF) setting cannot be restored using Restore current settings from USB devices.
+			- Fixes an issue where the Thunderbolt Security level select option disappears after Require BIOS PW to change The Thunderbolt Security level is enabled.
+			- Fixes an issue where running Windows System Restore from Recovery Manager with HP Sure Run enabled causes the system to shutdown unexpectedly. 
+			- Fixes an issue where the HP Sure View backlight control does not function properly on systems running a Linux operating system.
+			- Fixes an issue where connecting a 36W power source to the system using the USB Type-C port causes HP Notifications to be displayed unexpectedly.
+			- Fixes an issue where a system that is idle enters sleep mode after 2 minutes when a USB keyboard or mouse are used to wake the system.		   
+			
+			- Provides WoL (Wake on LAN) for systems that support only an external NIC.
+			- Adds PXE boot support for a system using a LAN dongle or a dock to connect to a network when USB Storage Boot is disable in the F10 setup interface.
+			- Adds a feature in the F10 setup interface to generate and store BIOS event logs.
+			- Adds the number of processor cores, the audio codec information, and installed drive information to the System Information tab of F10 setup interface.Improved Japanese touch keyboard. 
+			- Provides security update with new Management Engine firmware.
+			- Updates the CCG5 Power Delivery firmware to v6.13.
+			- Adds a feature in the F10 BIOS setup menu to enable and disable special function keys.
+			- Adds the Battery Health Manager feature to the F10 setup interface.
+			- Adds the HBMA (Host Base Mac Address) address in the DSDT table for the NIC (Network Interface Card) driver.
+			- Provides the ability to roll back the BIOS to the previous version directly in non-delay mode (operating system without EFI partition).
+
+                  	PCR0 (TPM2.0) = 4901BCA3110542E7A2D134ECE91E3B65F99ECDF05B5B154414EF33BD40C80383
+
+Version 01.01.08 	- Provides updated security with a new microcode version.
+			- Fixes an issue where the system stops functioning (hangs) after the BIOS is updated.
+			- Fixes an issue which causes the screen to flicker or to display vertical lines when the system is restarted after the system is shuts down unexpectedly.
+
+                  	PCR0 (TPM2.0) = 4A6F2E4990C5921D3DA27C50F4EC79504B68484532ED2B3F9FF1C0038FD32830
+
+
+Version 01.00.05 	- Provides the initial BIOS release.
+
+                  	PCR0 (TPM2.0) = 6A3AEB2BC8CD3659B87F9BBE23DFBDB74AADEB1B954BC867855C6E53F144100E
+
+
+
+

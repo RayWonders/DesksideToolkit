@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>637</width>
-    <height>491</height>
+    <width>632</width>
+    <height>460</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -37,7 +37,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Drivers</string>
+     <string>Drivers plz</string>
     </property>
    </widget>
    <widget class="QPushButton" name="ButtonWindows">
@@ -76,7 +76,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Hello DeskSide Support Presser of Power Buttons, What aid does one require?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Hello DeskSide Support Holder of Power Buttons, what aid does one require?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_5">
@@ -147,8 +147,8 @@
      <y>110</y>
     </hint>
     <hint type="destinationlabel">
-     <x>319</x>
-     <y>154</y>
+     <x>195</x>
+     <y>72</y>
     </hint>
    </hints>
   </connection>
@@ -163,8 +163,8 @@
      <y>196</y>
     </hint>
     <hint type="destinationlabel">
-     <x>343</x>
-     <y>251</y>
+     <x>442</x>
+     <y>161</y>
     </hint>
    </hints>
   </connection>
@@ -179,8 +179,24 @@
      <y>300</y>
     </hint>
     <hint type="destinationlabel">
-     <x>308</x>
-     <y>357</y>
+     <x>191</x>
+     <y>258</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButtonBIOS</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>biossledge()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>473</x>
+     <y>295</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>436</x>
+     <y>262</y>
     </hint>
    </hints>
   </connection>
@@ -189,5 +205,6 @@
   <slot>headsetconfwin()</slot>
   <slot>windowsconfwin()</slot>
   <slot>manconfwin()</slot>
+  <slot>biossledge()</slot>
  </slots>
 </ui>

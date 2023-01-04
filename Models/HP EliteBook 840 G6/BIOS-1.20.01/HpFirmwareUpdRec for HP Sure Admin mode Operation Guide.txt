@@ -1,0 +1,30 @@
+﻿HpFirmwareUpdRec for HP SureAdmin mode - Operation Guide 
+
+When to use:
+
+   The following steps only need to be used when the 'Enhanced BIOS Authorization Mode' feature in the firmware
+   has been enabled.
+
+How to use:
+
+1. Launch HpFirmwareUpdRec.exe (FUR) to read the firmware file (example: R93xxxx.bin) then output new firmware.bin:
+
+   HpFirmwareUpdRec64.exe -w   
+
+2. Launch HPQ password tool with both firmware.bin and private key to generate firmware.ead file.
+
+   HpqPswd64.exe /ot:0 /ar:0 /pkey:"yourkey.pfx" /fw:firmware.bin
+
+    /ot: OnTime value
+    /ar: Anti-Reply value
+    /pkey: The PFX file containing the private signing key to use
+
+3.Launch HpFirmwareUpdRec.exe (FUR) again to complete firmware update process. 
+
+4.Reboot system to complete the firmware update process. 
+
+
+   -- IMPORTANT --
+
+The signing key file (ex. "yourkey.pfx") specified is the same one which has been provisioned into the machine
+when Sure Admin was enabled.

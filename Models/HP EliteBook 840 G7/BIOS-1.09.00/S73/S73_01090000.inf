@@ -1,0 +1,57 @@
+
+; Copyright (C) 2022 HP Development Company. L.P.  All Rights Reserved.
+
+[Version]
+Signature   = "$WINDOWS NT$"
+Provider    = %Provider%
+Class       = Firmware
+ClassGuid   = {f2e7dd72-6468-4e36-b6f1-6488f42c1b52}
+DriverVer   = 04/07/2022,1.9.0.0
+CatalogFile = S73_01090000.cat
+PnpLockdown = 1
+
+[Manufacturer]
+%MfgName% = Firmware,NTx86, NTamd64, NTarm
+
+[Firmware.NTx86]
+%FirmwareDesc% = Firmware_Install,UEFI\RES_{3a548e4f-6514-40d9-87ea-dc85ee037bf7}
+
+[Firmware.NTamd64]
+%FirmwareDesc% = Firmware_Install,UEFI\RES_{3a548e4f-6514-40d9-87ea-dc85ee037bf7}
+
+[Firmware.NTarm]
+%FirmwareDesc% = Firmware_Install,UEFI\RES_{3a548e4f-6514-40d9-87ea-dc85ee037bf7}
+
+[Firmware_Install.NT]
+CopyFiles = Firmware_CopyFiles
+
+[Firmware_CopyFiles]
+S73_01090000.bin
+
+[Firmware_Install.NT.Hw]
+AddReg = Firmware_AddReg
+
+[Firmware_AddReg]
+HKR,,FirmwareId,,{3a548e4f-6514-40d9-87ea-dc85ee037bf7}
+HKR,,FirmwareVersion,%REG_DWORD%,0x01090000
+HKR,,FirmwareFilename,,{3a548e4f-6514-40d9-87ea-dc85ee037bf7}\S73_01090000.bin
+
+[SourceDisksNames]
+1 = %DiskName%
+
+[SourceDisksFiles]
+S73_01090000.bin = 1
+
+[DestinationDirs]
+DefaultDestDir = %DIRID_WINDOWS%,Firmware\{3a548e4f-6514-40d9-87ea-dc85ee037bf7} ; %SystemRoot%\Firmware
+
+[Strings]
+; localizable
+Provider     = "HP Inc."
+MfgName      = "HP Inc."
+FirmwareDesc = "HP S73 System Firmware"
+DiskName     = "Firmware Update"
+
+; non-localizable
+DIRID_WINDOWS = 10
+REG_DWORD     = 0x00010001

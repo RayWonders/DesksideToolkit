@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(637, 491)
+        MainWindow.resize(632, 460)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.ButtonHeadset = QtWidgets.QPushButton(self.centralwidget)
@@ -53,16 +53,17 @@ class Ui_MainWindow(object):
         self.ButtonHeadset.clicked.connect(MainWindow.headsetconfwin) # type: ignore
         self.ButtonApp.clicked.connect(MainWindow.manconfwin) # type: ignore
         self.ButtonWindows.clicked.connect(MainWindow.windowsconfwin) # type: ignore
+        self.ButtonBIOS.clicked.connect(MainWindow.biossledge) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.ButtonHeadset.setText(_translate("MainWindow", "Headset Repairs"))
-        self.ButtonDock.setText(_translate("MainWindow", "Drivers"))
+        self.ButtonDock.setText(_translate("MainWindow", "Drivers plz"))
         self.ButtonWindows.setText(_translate("MainWindow", "Windows OS Repairs"))
         self.ButtonOutlook.setText(_translate("MainWindow", "Outlook Repairs"))
-        self.TitleLabel.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt;\">Hello DeskSide Support Presser of Power Buttons, What aid does one require?</span></p></body></html>"))
+        self.TitleLabel.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt;\">Hello DeskSide Support Holder of Power Buttons, what aid does one require?</span></p></body></html>"))
         self.pushButton_5.setText(_translate("MainWindow", "N/A"))
         self.ButtonApp.setText(_translate("MainWindow", "Manually install apps"))
         self.ButtonBIOS.setText(_translate("MainWindow", "BIOS Update"))

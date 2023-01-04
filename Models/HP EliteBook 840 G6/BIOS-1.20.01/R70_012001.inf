@@ -1,0 +1,55 @@
+[Version]
+Signature   = "$WINDOWS NT$"
+Provider    = %Provider%
+Class       = Firmware
+ClassGuid   = {f2e7dd72-6468-4e36-b6f1-6488f42c1b52}
+DriverVer   = 06/10/2022,01.20.01.0
+CatalogFile = R70_012001.cat
+PnpLockdown = 1
+
+[Manufacturer]
+%MfgName% = Firmware,NTx86,NTamd64,NTarm
+
+[Firmware.NTx86]
+%DeviceDesc% = Firmware_Install,UEFI\RES_{7136F763-0121-4E5F-A9C6-838A59F57959}
+
+[Firmware.NTamd64]
+%DeviceDesc% = Firmware_Install,UEFI\RES_{7136F763-0121-4E5F-A9C6-838A59F57959}
+
+[Firmware.NTarm]
+%DeviceDesc% = Firmware_Install,UEFI\RES_{7136F763-0121-4E5F-A9C6-838A59F57959}
+
+[Firmware_Install.NT]
+CopyFiles = Firmware_CopyFiles
+
+[Firmware_CopyFiles]
+R70_012001.bin
+
+[Firmware_Install.NT.Hw]
+AddReg = Firmware_AddReg
+
+[Firmware_AddReg]
+HKR,,FirmwareId,,{7136F763-0121-4E5F-A9C6-838A59F57959}
+HKR,,FirmwareVersion,%REG_DWORD%,0x00012001
+HKR,,FirmwareFilename,,{7136F763-0121-4E5F-A9C6-838A59F57959}\R70_012001.bin
+
+[SourceDisksNames]
+1 = %DiskName%
+
+[SourceDisksFiles]
+R70_012001.bin = 1
+
+[DestinationDirs]
+DefaultDestDir = %DIRID_WINDOWS%,Firmware\{7136F763-0121-4E5F-A9C6-838A59F57959}
+
+[Strings]
+;localizable
+Provider     = "HP Inc."
+MfgName      = "HP Inc."
+DeviceDesc   = "HP R70 System Firmware"
+DiskName     = "Firmware Update"
+
+;non-localizable
+DIRID_WINDOWS = 10
+REG_DWORD     = 0x00010001
+

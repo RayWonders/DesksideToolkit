@@ -1,0 +1,18 @@
+# 840 G5 BIOS Update
+
+# The BIOS version the device should have
+Version == 1.20.00
+
+# Command to be executed for the BIOS update
+Command == HPFirmwareUpdRec64.exe
+
+# Arguments to pass to COMMAND
+
+# Silent
+Arg1 == -s
+# Do not restart automatically
+Arg2 == -r
+# Disable BitLocker during upgrade
+Arg3 == -b
+# Password file (parameter will be removed if device has no BIOS password)
+Arg4 == -p"@@PASSWORD_FILE@@"

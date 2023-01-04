@@ -1,0 +1,341 @@
+			Revision History
+			S70/S73 ROM Family
+
+
+Models Supported:	HP EliteBook 830 G7 Notebook PC
+					HP EliteBook 840 G7 Notebook PC
+					HP EliteBook 850 G7 Notebook PC
+					HP ZBook Firefly 14 G7 Mobile Workstation
+					HP ZBook Firefly 15 G7 Mobile Workstation
+
+Version 01.09.00
+ENHANCEMENTS:
+- Enhancement to address security vulnerabilities CVE-2022-21166, CVE-2022-21123, CVE-2022-21151, CVE-2022-0005.
+- Enhancement to address security vulnerabilities CVE-2021-33122.
+- Enhancement to address security vulnerabilities CVE-2021-33123, CVE-2021-33124, CVE-2021-33103.
+- Remove physical presence interface pops up when changing the "Intel Software Guard Extensions (SGX)" setting from "Software control" to "Disable".
+- Enhancement to address security vulnerabilities CVE-2022-23924, CVE-2022-23925, CVE-2022-23926, CVE-2022-23927, CVE-2022-23928, CVE-2022-23929, CVE-2022-23930, CVE-2022-23931, CVE-2022-23932, CVE-2022-23933, CVE-2022-23934.
+- Enhancement to address security vulnerabilities CVE-2022-23953, CVE-2022-23954, CVE-2022-23955, CVE-2022-23956, CVE-2022-23957, CVE-2022-23958.
+- Adds a feature to control display of BIOS Admin login based on ""BIOS Administrator visible at power-on authentication"" when Enhanced BIOS Authentication Mode (EBAM) is set.
+- Enhancement to address security vulnerabilities CVE-2021-23223, CVE-2021-37409.
+- Enhancement to extend Intel WLAN AX201 (Harrison Peak2) 802.11ax support in Russia and Indonesia WLAN 5.15-5.35 GHz band.
+- Enahancement the stability of camera shading, lest it shows purple/pink.  
+- Addresses security vulnerabilities CVE-2022-0004.
+
+- Includes the following firmware:
+Cypress Power Delivery (PD) Firmware (CCG5), version 1.9.0
+EC/SIO Firmware, version 06.44.00
+Intel GOP EFI Driver, version 9.0.1107.A.11
+Management Engine (ME) Firmware, version 14.1.65.1969
+NVIDIA Graphics Driver, version 86.08.3B.00.42
+NVIDIA vBIOS, version 86.08.41.00.0E
+PXE UEFI DisplayLink, version 1.1.4
+PXE UEFI Realtek, version 2.036
+RAID EFI Driver, version 18.31.1.5256
+
+FIXES:  
+- Fixes issue where system failure to boot after switching between two different saved bootstores.
+- Fixes an issue where there is no PXE boot option when connect to HP Thunderbolt Dock G4.
+
+PCR0 (TPM2.0) = 
+S70 : E63E9294D7A8469EAE9D82BF10455D821E85620E789DF235A695698667B020BC
+S73 : 0F2B8D769AA14F671D9374A1853C9172F206827F66758FF33EE3BBC38AA9F420
+
+Version 01.08.20
+ENHANCEMENTS:  
+- Addresses security vulnerabilities CVE-2022-23924, CVE-2022-23925, CVE-2022-23926, CVE-2022-23927, CVE-2022-23928, CVE-2022-23929, CVE-2022-23930, CVE-2022-23931, CVE-2022-23932, CVE-2022-23933, CVE-2022-23934.
+- Addresses security vulnerabilities CVE-2022-23953, CVE-2022-23954, CVE-2022-23955, CVE-2022-23956, CVE-2022-23957, CVE-2022-23958.
+- Adds a feature to control the display of the BIOS Admin login based on the setting, BIOS Administrator visible at power-on authentication, when Enhanced BIOS Authentication Mode (EBAM) is set.
+
+- Includes the following firmware:
+Cypress Power Delivery (PD) Firmware (CCG5), version 1.9.0
+EC/SIO Firmware, version 06.44.00
+Intel GOP EFI Driver, version 9.0.1107.A.11
+Management Engine (ME) Firmware, version 14.1.60.1807
+NVIDIA Graphics Driver, version 86.08.3B.00.42
+NVIDIA vBIOS, version 86.08.41.00.0E
+PXE UEFI DisplayLink, version 1.1.4
+PXE UEFI Realtek, version 2.035
+RAID EFI Driver, version 18.31.1.5256
+- Includes the following firmware:
+Cypress Power Delivery (PD) Firmware (CCG5), version 1.9.0
+EC/SIO Firmware, version 06.44.00
+Intel GOP EFI Driver, version 9.0.1107.A.11
+Management Engine (ME) Firmware, version 14.1.60.1807
+NVIDIA Graphics Driver, version 86.08.3B.00.42
+NVIDIA vBIOS, version 86.08.41.00.0E
+PXE UEFI DisplayLink, version 1.1.4
+PXE UEFI Realtek, version 2.035
+RAID EFI Driver, version 18.31.1.5256
+
+FIXES:  
+- Fixes issue where system failure to boot after switching between two different saved bootstores.
+
+PCR0 (TPM2.0) = 
+S70 : 34DD86B7B838C49536FE9DFE66A259708BE54749CB74EEFC8169FEAC055FE1C8
+S73 : 358CA599DDD7B50EB4A5D10C7DA48DDD151A0DE1893670F5D7EADE0DBFF9FFDC
+
+Version 01.08.00
+ENHANCEMENTS:  
+- Updates Intel ME Firmware 14.1.60.1807. 
+- Enhancement to address security vulnerabilities CVE-2021-33107. 
+- Enhancement to address security vulnerabilities CVE-2021-0103, CVE-2021-0107, CVE-2021-0111, CVE-2021-0114, CVE-2021-0115, CVE-2021-0116, CVE-2021-0117, CVE-2021-0118, CVE-2021-0119, CVE-2021-0124, CVE-2021-0125. 
+- Enhancement to address security vulnerabilities CVE-2021-0127. 
+- Enhancement to address security vulnerabilities CVE-2021-39297, CVE-2021-39299, CVE-2021-39300, CVE-2021-39301. 
+
+- Includes the following firmware:
+Cypress Power Delivery (PD) Firmware (CCG5), version 1.9.0
+EC/SIO Firmware, version 06.44.00
+Intel GOP EFI Driver, version 9.0.1107.A.11
+Management Engine (ME) Firmware, version 14.1.60.1807
+NVIDIA Graphics Driver, version 86.08.3B.00.42
+NVIDIA vBIOS, version 86.08.41.00.0E
+PXE UEFI DisplayLink, version 1.1.4
+PXE UEFI Realtek, version 2.035
+RAID EFI Driver, version 18.31.1.5256
+
+FIXES:  
+- Fixes an issue where system cannot be charging via HP Thunderbolt Dock G4r after plug-out AC adapter 
+
+PCR0 (TPM2.0) = 
+S70 : 88BE9638384D880B02FB61E2BAAD99C44D1027D16FEEDCD47393BA17E0373C6F
+S73 : C15F83586B022A785E21FE9DD1B7BC2DE006F2184F1298F04F19DF15E1C02508
+
+Version 01.07.00
+ENHANCEMENTS:  
+- Addresses security vulnerabilities CVE-2021-0091, CVE-2021-0156, CVE-2021-0157, CVE-2021-0158.
+- Addresses security vulnerabilities CVE-2021-33113, CVE-2021-33115.
+- Enhances system performance when the system is connected to a 100W HP USB-C G5 dock using a USB-C connection.
+- Updates Camera Firmware Management to enhance camera firmware flash stability.
+- Provides support for Windows 11.
+
+- Includes the following firmware:
+Cypress Power Delivery (PD) Firmware (CCG5), version 1.9.0
+EC/SIO Firmware, version 06.43.00
+Intel GOP EFI Driver, version 9.0.1107.A.11
+Management Engine (ME) Firmware, version 14.1.53.1649
+NVIDIA Graphics Driver, version 86.08.3B.00.42
+NVIDIA vBIOS, version 86.08.41.00.0E
+PXE UEFI DisplayLink, version 1.1.4
+PXE UEFI Realtek, version 2.035
+RAID EFI Driver, version 18.31.1.5256
+
+FIXES:  
+- Fixes an issue where the Thunderbolt graphics card does not function properly after system is restarted.
+- Fixes an issue on a system connected to an AC power source where the battery charge LED indicator light changes from amber to white and then powers off when the battery is depleted.
+- Fixes an issue where the battery charge LED indicator light changes from amber to white when the battery is charged only to 88% of capacity.
+- Fixes an issue where Fn+F3/F4 do not change the brightness of the display panel when the Privacy Panel is enabled in the F10 settings.
+- Fixes an issue where the Remote HP PC Diagnostics Execution Physical Presence Interface continues to be displayed unexpectedly.
+- Fixes an issue where the display certain F10 settings or help messages is incomplete when the language setting is changed to a non-English language.
+- Fixes an intermittent issue where the system displays an HP Endpoint Security Controller error during the POST (Power-On Self-Test) phase.
+- Fixes an issue on a system using an HP E27D USB Type-C monitor where the system stops functioning while an upgrade to the system firmware is run.
+
+PCR0 (TPM2.0) = 
+S70 : 7998475A912392EBD993E6854C077A8467DEB2D2340F1C46EE7C3527E80ED42C
+S73 : ED53B370583D0808630CBD12E9C6F4D47BAA702598EEB680E81CE917A8042432
+FUR from BIOS version with ME14.1.53.1649 ( ISH 4133):
+S70 : C5626F776791DA5535782D9FDFB391C85DA1048E3DC6BBCCF16104C1AAB59631
+S73 : C4BF1659E8A2375D88B3A978273542C0E9276FFF99ABC1AD13BCA0AB935EB2F4
+
+
+Version 01.06.01
+ENHANCEMENTS:  
+- Addresses security vulnerabilities CVE-2021-0072, CVE-2021-0161, CVE-2021-0164, CVE-2021-0165, CVE-2021-0166, CVE-2021-0168, CVE-2021-0170, CVE-2021-0076, CVE-2021-0183.
+- Updates the power-on battery warning message when the battery capacity is low.
+- Updates the Realtek USB UEFI PXE driver to version 2.035 to enhance stability and compatibility.
+- Updates the battery capacity icon display when Maximize My Battery Health is set in the F10 settings and the battery is fully charged.
+- Provides support for a new camera module.
+- Provides support for Intel Optane Memory H20 with Solid State Storage.
+- Provides support for a new fingerprint module.
+
+- Includes the following firmware:
+Cypress Power Delivery (PD) Firmware (CCG5), version 1.9.0
+EC/SIO Firmware, version 06.41.00
+Intel GOP EFI Driver, version 9.0.1107.A.11
+Management Engine (ME) Firmware, version 14.1.53.1649
+NVIDIA Graphics Driver, version 86.08.3B.00.42
+NVIDIA vBIOS, version 86.08.41.00.0E
+PXE UEFI DisplayLink, version 1.1.4
+PXE UEFI Realtek, version 2.035
+RAID EFI Driver, version 18.31.1.5256
+
+FIXES:  
+- Fixes an issue where the display of certain BIOS settings or help messages are incomplete when the language setting is changed to non-English language in the F10 menu.
+- Fixes an issue on a system with Sure Admin enabled where the Power-On Password cannot be cleared after the defaults are restored using Restore Security Settings to Factory Defaults.
+- Fixes an issue which causes an error message to be displayed after Power-On Authentication is enabled when the user account name is longer that 11 characters.
+- Fixes an issue where the current and new version numbers in the HP Firmware Update and Recovery tool are reversed.
+- Fixes an issue where the system enters hibernate mode unexpectedly when the system is connected to or disconnected from an AC power source.
+- Fixes an issue where the CTRL+ALT+Insert key combination does not function properly in the Fn unlock mode. 
+- Fixes an issue where the system displays a black screen after the BIOS is upgraded using the Firmware Update and Recovery Utility (FUR)
+- Fixes an issue where the system cannot detect a specific portable SSD in the F9 boot menu when the SSD is connected to the system using a USB-C to USB-C cable.
+- Fixes an issue where HP SureView continues to be enabled after Enable HP SureView is changed from Enable to Disable in the F10 menu.
+
+PCR0 (TPM2.0) = 
+S70:E51B60FAA0BEB700177095F0CA9E6864129E5489A227BA069A588B8B987F3DBC
+S73:75820B92E9EC542ABE61C15E2BD87FC60920766D250317AE5F30B480AA394B92    
+For system updated from BIOS v01.05.00, PCR value will be: 
+S70:812EF750695E4BB9B665D1126D8DE824136608C1AB461652242C7D60D9AA34FE
+S73:EDB9AC7FF8DD1A9F6699FFB1205E44A995C3093E99A7996CE8F6D48D3AD9C3A4 
+
+Version 01.05.00
+ENHANCEMENTS:  
+- Improved Modern Stanby experience on AC to DC transistion with lid closed 
+- Add support brightness hotkey for Linux operating system. 
+- Support camera and clickpad firmware update by windows update. 
+- Enhancement to address security vulnerabilities CVE-2020-8703, CVE-2020-8704, CVE-2020-24506 and CVE-2020-24507. 
+- "Update UEFI Wifi Driver to v1.2.4.2193 to enhance connection stability in preboot environment.
+- Enhancement to address security vulnerabilities CVE-2021-0071, CVE-2021-0069, CVE-2021-0075." 
+- Adds a feature ""IPv6 during UEFI Boot"" in F10 setup interface where user has ability to disable IPv6 during preboot phase." 
+- Enhancement to address security vulnerabilities CVE-2020-24512, CVE-2020-24511. 
+- Adds camera firmware update capability on new supported camera devices (VID/PID: 30C9/0046 and VID/PID: 0408/5378). 
+
+- Includes the following firmware:
+EC/SIO Firmware, version 06.3D.00
+Cypress Power Delivery (PD) Firmware (CCG5), version 1.7.0
+Intel GOP EFI Driver, version 9.0.1107.A.11
+NVIDIA vBIOS, version 86.08.41.00.0E
+NVIDIA Graphics Driver, version 86.08.3B.00.42
+PXE UEFI DisplayLink, version 1.1.4
+PXE UEFI Realtek, version 2.025
+RAID EFI Driver, version 17.8.0.4507
+Management Engine (ME) Firmware, version 14.1.53.1649
+
+FIXES:  
+- Fixes an issue where keyboard backlight doesn't turn on if press any key to bring system resume from modern stanby mode.
+- Fixes an issue where the keyboard Fn key LED doesn't trun off  when system in shut down state.  
+- "Fixes issue where Security Device Error message unexpected pop out after enable Power-on Password.
+- Fixes an issue where user pressed esc than fn key, the icons on desktop can't drag. 
+- Fixes an issue where keyboard lost fnction randomly. 
+- Fixes an issue where fan doesn't spin when CPU temperature increase above certain degree in DC mode after system under modern standby mode. 
+- Fixes an issue where the system can't be charged via HP USB-C Dock G5 and HP USB-C/A Dock G2.
+
+PCR0 (TPM2.0) = S70 : CCD8BEAB7881DE7166A20800A5B2D6DF00860D4C54B384F76C2A34B73C6BED95
+                S73 : 5991BE5E767D4E2901C7E5B392A911F87D52F0CFBBF7E37AB274628F0A850634
+
+
+Version 01.04.02
+ENHANCEMENTS:  
+- Remove option "Maximize Battery Duration" in BIOS menu.
+- Improved system resume time from MSC(Modern Standby) with WWAN device attached.
+- Add support new WMI comment code with get Adaptive Battery Optimizer feature record data of battery in lifespan stored in battery firmware 
+- Update camera firmware for image quality enhancement
+- Add support Max DC Performance feature in BIOS menu.
+- Improved fan span algorithm for a better user experience.
+- Update Intel reference code to 09.00.45.10.
+- Update Thunderbolt NVM to V62.0.1.2.1
+- Update Intel Management Engine Firmware to 14.0.47.1482.
+- Update Camera firmware to enhance image quality.
+
+
+- Includes the following firmware:
+EC/SIO Firmware, version 06.39.00
+Cypress Power Delivery (PD) Firmware (CCG5), version 1.7.0
+Intel GOP EFI Driver, version 9.0.1107.A.11
+NVIDIA vBIOS, version 86.08.41.00.0E
+NVIDIA Graphics Driver, version 86.08.3B.00.42
+PXE UEFI DisplayLink, version 1.1.4
+PXE UEFI Realtek, version 2.025
+RAID EFI Driver, version 17.8.0.4507
+Management Engine (ME) Firmware, version 14.0.47.1482
+
+FIXES:  
+- Fixes an issue where WWAN card disappeared after uninstalling WWAN driver.
+- Fixes an issue where Battery Health Manager setting cannot apply to system immediately after setting by BCU. 
+- Fixes issue where system shows Sure Start Recovery error randomly when power up system.
+- Fixes an issue where the laptop will auto enter hibernation mode when plug in Type-C E223d Dock Monitor.
+- Fixes an issue where system goes performance mode when setting BIOS option "Power slider" to Disable.
+
+PCR0 (TPM2.0) = S70 : 5FBE2B684EC53E464DFF13FDCB53D9E2D443732C74B4A55B32A702A677EE67DC
+				S73 : 4A73861709219C09E62BDE9ACBD791B4903A2384BC4AC4D3FEF2FE23A77D9C69
+
+
+Version 01.03.02
+ENHANCEMENTS:  
+- Addresses security vulnerabilities CVE-2020-8694, CVE-2020-8695.
+- Addresses security vulnerabilities CVE-2020-8705, CVE-2020-8744, CVE-2020-8745, CVE-2020-8746, CVE-2020-8747, CVE-2020-8749, CVE-2020-8752, CVE-2020-8753, CVE-2020-8754, CVE-2020-8755, CVE-2020-8756, CVE-2020-8757, CVE-2020-8760, CVE-2020-12297, CVE-2020-12303, CVE-2020-12355, CVE-2020-12356.
+- Updates the Thunderbolt security firmware to version 3. NOTE: Due to the security upgrades, after this package is run, the firmware cannot be downgraded to previous versions.
+- Adds public WMI support to get battery information via third party software.
+- Updates HP Sure Run Agent to v3.1.10.1.
+- Provides the Critical Security Update.
+
+- Includes the following firmware:
+EC/SIO Firmware, version 06.37.00
+Cypress Power Delivery (PD) Firmware (CCG5), version 1.7.0
+Intel GOP EFI Driver, version 9.0.1107.A.11
+NVIDIA vBIOS, version 86.08.41.00.0E
+NVIDIA Graphics Driver, version 86.08.3B.00.42
+PXE UEFI DisplayLink, version 1.1.4
+PXE UEFI Realtek, version 2.025
+RAID EFI Driver, version 17.8.0.4507
+Management Engine (ME) Firmware, version 14.0.45.1389
+
+FIXES:  
+- Fixes issue on a discrete GPU (dGPU) system where the system cannot detect an external dock or external display when the system resumes from a hibernate or system off state.
+- Fixes an issue where the HP Sure start Recovery screen is unexpectedly displayed when Sure Start BIOS Setting Protection is enabled.
+- Fixes an issue where Secure Erase does not execute properly when the display is changed to a non-English language.
+- Fixes an issue on a system using the Traditional Chinese language where option, Power button delay to avoid accidental activation for system sleep or power down, is visually distorted.
+- Fixes an issue on a system using the Japanese language where the text is incomplete for the F3 help message, Check HP.com for BIOS Updates.
+- Fixes an issue where the BIOS options, OS Recovery Agent Provisioning Version and OS Recovery Image Provisioning Version, are formatted differently in the BIOS Configuration Utility and the F10 setup, Backup current setting to USB device.
+- Fixes an issue where a system using external Hard Disk Drive boots to a black screen.
+- Fixes an issue where the display does not function properly when the system is connected to an Apple XDR monitor.
+- Fixes an issue where certain USB-C third-party headphones are not detected when connected to the USB-C port.
+- Fixes an issue where an HDMI/VGA monitor connected to an HP USB-C Travel Hub G2 does not function properly when hi-resolution is enabled.
+- Fixes an issue where a system using a 15W USB-C adapter cannot recharge the battery when the system is in dead battery mode.
+
+
+PCR0 (TPM2.0) = S70: A972A1747D8EF7C4D45EBCBB747F29E597F49448C0237D1753F1EA24BCBBD35A
+				S73: 2334CCC37E2EAC301810A86B7F9D5C3CADA0EEB01E56B7BCADCDF6EA181EDB85
+
+Version 01.01.07
+- This BIOS upgrade package also includes the following firmware:		(only list appropriate ones)
+
+EC/SIO Firmware, version 06.34.00
+Cypress Power Delivery (PD) Firmware (CCG5), version 1.5.0
+Intel GOP EFI Driver, version v9.0.1107.A.11
+Nvdia VBIOS version 86.08.41.00.0E
+Nvdia version  86.08.3B.00.42
+PXE UEFI DisplayLink, version 1.1.4
+PXE UEFI Realtek, version 2.025
+RAID EFI Driver, version 17.8.0.4507
+Management Engine (ME) Firmware, version 14.0.39.1339
+
+
+- Enhancement to address security vulnerabilities CVE-2020-8758.
+
+- Enhancement to address security vulnerabilities CVE-2020-0543, CVE-2020-0548, CVE-2020-0549.
+
+- Enhancement to address security vulnerabilities CVE-2020-8672.
+
+- Update Intel reference code to 9.0.3B.30.
+
+- Fixes device manager show "Unknown USB Device" when plug USB-C to RJ45 dongle with LAN cable in S4/S5 and resume to OS.
+
+- Fixes system cannot change to privacy mode when resume from Modern Standby mode by pressing F2 key.
+
+- Fixes Hook's port no function issue in Bitlocker recovery screen when resume from S4/S5.
+
+- Fixes HBMA not working when connected with USB-C/A dongle.  
+
+- Fixes system boot time is slow when resume from S4/S5 by wake on lan via Hook connected.
+
+PCR0 (TPM2.0) = S70:6B542D8158C61C70EE877C37AFACF62D05F3E8A49290A66B419B01B5A058E579
+                S73:587742FE57A29DA4BE696341254FC9EDEDE24A0254940D34BC6632276B5F1267
+
+Version 01.01.06
+- Fix an issue which causes the system to stop functioning and display a black screen when the BIOS is updated using HpFirmwareUpdRec.exe tool when HP Sure Run is enabled.
+
+- Fixes an issue which causes Device Manager to display an error symbol (yellow bang) on an Unknown USB Device when the system is connected to a USB-C to RJ45 dongle with a LAN cable after the system resumes from hibernate (S4) or system off (S5).
+
+- Fixes an issue which causes a black screen to be displayed when shipping mode is unlocked by connecting the system to a Type-C adapter and pressing the power button.
+
+PCR0 (TPM2.0) = S70:E4C6E18E2D082FE91240EDD24241199A3F1F0A3351FFC7DA459621FD208DF9A8
+                S73:73B5CAACD18F1482C300F75DF66C1CF2CD35E7DB1643DAA95EFFE740201B3FF4
+
+Version 01.01.05 	
+- Provides the initial BIOS release.
+
+PCR0 (TPM2.0) = S70:23EE1288C10B5065D1A7CB103E8FF44C1A4CAF9EA0A8D8C73AACAD736811874D
+		S73:58D60987D38010379380D0F68303835DA40ACAF34943913B0B78EDFFB65B86D7
+
+
+
