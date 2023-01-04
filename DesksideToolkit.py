@@ -138,7 +138,7 @@ class headsetconfwin(QMainWindow):
     def script1_finished(self):
         self.p = None
 
-#Confirmation window for Manially installed Applications
+#Confirmation window for Manually installed Applications
 class manconfwin(QMainWindow):
     def __init__(self):
         super().__init__()
