@@ -2,9 +2,10 @@ import sys
 import webbrowser
 import subprocess
 import ctypes
-from PyQt5 import QtCore, QtGui, QtWidgets, uic
-from PyQt5.QtCore import QProcess, Qt
-from PyQt5.QtWidgets import QMainWindow, QLabel, QPushButton, QCheckBox
+from PyQt5 import QtWidgets, uic
+from PyQt5.QtCore import *
+from PyQt5.QtWidgets import *
+from PyQt5.QtGui import *
 
 app = QtWidgets.QApplication(sys.argv)
 
@@ -33,6 +34,12 @@ class Ui(QtWidgets.QMainWindow):
         self.mcw.show()
         self.hide()
 
+    #Slot for BIOSSledgehammer start window
+    def biossledge(self):
+        self.bsh = biossledge()
+        self.bsh.show()
+        self.hide
+
 #window to activate DISM/SFC repair w checkbox
 class windowsconfwin(QMainWindow):
     def __init__(self):
@@ -42,7 +49,7 @@ class windowsconfwin(QMainWindow):
 
         #checkbox for Restart function
         self.winchk = QCheckBox(self)
-        self.winchk.setGeometry(10, 140, 350, 55)
+        self.winchk.setGeometry(30, 140, 350, 55)
         self.winchk.setText('restart when completed? (recommended)')
         self.winchk.setStyleSheet('font-size:15px')
         self.winchk.setChecked(False)
@@ -54,19 +61,20 @@ class windowsconfwin(QMainWindow):
         self.winstart.setStyleSheet('font-size:25px')
         self.winstart.clicked.connect(self.run_sfc_scannow)
 
+        #Connect signal so program knows if checkbox state changes and what script to run in conclusion       
         self.winchk.stateChanged.connect(self.chkboxchange)
 
     def chkboxchange(self):
         if self.winchk.isChecked():
             self.winstart.clicked.disconnect() # Disconnect the clicked signal from all its connections
-            # Connect the clicked signal to the winscript2 function
+            # Connect the clicked signal to the run_sfc_scannow_shutdown function
             self.winstart.clicked.connect(self.run_sfc_scannow_shutdown)
         else:
             self.winstart.clicked.disconnect() # Disconnect the clicked signal from all its connections
-            # Connect the clicked signal to the winscript function
+            # Connect the clicked signal to the run_sfc_scannow function
             self.winstart.clicked.connect(self.run_sfc_scannow)
 
-    #SFC /Scannow && Dism /RestoreHealth script
+    #SFC /Scannow && Dism /RestoreHealth script (no shutdown)
     def run_sfc_scannow(self):
         def is_admin():
             try:
@@ -79,7 +87,7 @@ class windowsconfwin(QMainWindow):
         else:
             subprocess.call(["cmd.exe", "/C", "sfc", "/scannow"])
 
-    #SFC /Scannow && Dism /RestoreHealth script WITH RESTARTS
+    #SFC /Scannow && Dism /RestoreHealth script WITH SHUTDOWN
     def run_sfc_scannow_shutdown(self):
         def is_admin():
             try:
@@ -170,6 +178,65 @@ class manconfwin(QMainWindow):
 
     def powerbidownload_finished(self):
         self.bidown = None
+
+#BIOSSledgehammer start window
+class biossledge(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.resize(380, 200)
+        self.setWindowTitle("Update my BIOS!!!")
+
+        #label during countdown
+        self.bioslbl = QLabel(self)
+        self.bioslbl.setGeometry(5, 0, 370, 55)
+        self.bioslbl.setAlignment(Qt.AlignCenter)
+
+        # Set the font of the label to a larger, bold style
+        font = QFont("Arial", 12,)
+        self.bioslbl.setFont(font)
+        self.bioslbl.setText('BIOS update will begin momentarily...')
+
+        #consent checkbox that device will NOT be turned off
+        self.bioscheckbox = QCheckBox(self)
+        self.bioscheckbox.setGeometry(20, 135, 500, 55)
+        self.bioscheckbox.setText('I will NOT turn off whilst BIOS updates. (MUST be checked)')
+        self.bioscheckbox.setStyleSheet('font-size:12px')
+        self.bioscheckbox.setChecked(False)
+        
+
+        # Set the countdown timer to 5 seconds
+        self.countdown_timer = QTimer(self)
+        self.countdown_timer.setInterval(1000)  # 1 second interval
+        self.countdown_timer.timeout.connect(self.update_countdown)
+        self.countdown_value = 5
+
+        # Set up the UI
+        self.label = QLabel(str(self.countdown_value), self)
+        self.label.setAlignment(Qt.AlignCenter)
+
+        # Set the font of the label
+        font = QFont("Open Sans", 24)
+        self.label.setFont(font)
+
+        self.setCentralWidget(self.label)
+
+    def update_countdown(self):
+        # Decrement the countdown value
+        self.countdown_value -= 1
+
+        # Update the label with the new countdown value
+        self.label.setText(str(self.countdown_value))
+
+        # If the countdown value is zero, stop the timer and run the program
+        if self.countdown_value == 0:
+            self.countdown_timer.stop()
+            # Run your program here
+            print("Countdown finished!")
+
+    def showEvent(self, event):
+        if event.type() == QShowEvent.Show:
+        # Start the countdown timer when the window is shown
+            self.countdown_timer.start()
 
 window = Ui()
 sys.exit(app.exec_())
