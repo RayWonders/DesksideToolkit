@@ -1,4 +1,0 @@
-#EliteBook 9470m
-
-Boot Mode==UEFI Native (Without CSM)
-SecureBoot==Enable

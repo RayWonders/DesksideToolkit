@@ -1,6 +1,0 @@
-#Z420
-
-Legacy Support==Disable
-Secure Boot==Enable
-
-
