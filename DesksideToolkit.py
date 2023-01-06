@@ -202,6 +202,7 @@ class biossledge(QMainWindow):
         self.bioscheckbox.setText('I will NOT turn off whilst BIOS updates. (MUST be checked)')
         self.bioscheckbox.setStyleSheet('font-size:12px')
         self.bioscheckbox.setChecked(False)
+        self.bioscheckbox.stateChanged.connect(self.start_countdown)
         
         # Set the countdown timer to 5 seconds
         self.countdown_timer = QTimer(self)
@@ -216,9 +217,14 @@ class biossledge(QMainWindow):
         # Set the font of the label
         font = QFont("Open Sans", 24)
         self.label.setFont(font)
-
         self.label.setGeometry(168, 75, 40, 40)
 
+    def start_countdown(self, state):
+        if self.bioscheckbox.isChecked():
+            self.countdown_timer.start()
+        else:
+            self.countdown_timer.stop()
+            
     def update_countdown(self):
         # Decrement the countdown value
         self.countdown_value -= 1
@@ -231,12 +237,27 @@ class biossledge(QMainWindow):
             self.countdown_timer.stop()
             # Run your program here
             if self.bioscheckbox.isChecked():
-                subprocess.call(['powershell.exe', 'BiosSledgehammer\BiosSledgehammer.ps1', '-Verb', 'runas'])
+                self.run_bs()
 
-    def showEvent(self, event):
-        if event.type() == QShowEvent.Show:
-        # Start the countdown timer when the window is shown
-            self.countdown_timer.start()
+    def run_bs(self):
+        def is_admin():
+            try:
+                return ctypes.windll.shell32.IsUserAnAdmin()
+            except:
+                return False
+
+        if not is_admin():
+            self.bs_script1()
+        else:
+            return 0
+
+    def bs_script1(self):        
+        self.bs_script = QProcess()
+        self.bs_script.finished.connect(self.bs_script1_finished) #clean up once complete.
+        self.bs_script.start ("RunVisable.bat")
+
+    def bs_script1_finished(self):
+        self.bs_script = None
 
 window = Ui()
 sys.exit(app.exec_())
