@@ -198,12 +198,11 @@ class biossledge(QMainWindow):
 
         #consent checkbox that device will NOT be turned off
         self.bioscheckbox = QCheckBox(self)
-        self.bioscheckbox.setGeometry(20, 135, 500, 55)
+        self.bioscheckbox.setGeometry(10, 135, 500, 55)
         self.bioscheckbox.setText('I will NOT turn off whilst BIOS updates. (MUST be checked)')
         self.bioscheckbox.setStyleSheet('font-size:12px')
         self.bioscheckbox.setChecked(False)
         
-
         # Set the countdown timer to 5 seconds
         self.countdown_timer = QTimer(self)
         self.countdown_timer.setInterval(1000)  # 1 second interval
@@ -218,7 +217,7 @@ class biossledge(QMainWindow):
         font = QFont("Open Sans", 24)
         self.label.setFont(font)
 
-        self.setCentralWidget(self.label)
+        self.label.setGeometry(168, 75, 40, 40)
 
     def update_countdown(self):
         # Decrement the countdown value
@@ -231,13 +230,13 @@ class biossledge(QMainWindow):
         if self.countdown_value == 0:
             self.countdown_timer.stop()
             # Run your program here
-            print("Countdown finished!")
+            if self.bioscheckbox.isChecked():
+                subprocess.call(['powershell.exe', 'BiosSledgehammer\BiosSledgehammer.ps1', '-Verb', 'runas'])
 
     def showEvent(self, event):
         if event.type() == QShowEvent.Show:
         # Start the countdown timer when the window is shown
             self.countdown_timer.start()
-
 
 window = Ui()
 sys.exit(app.exec_())
