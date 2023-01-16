@@ -76,29 +76,11 @@ class windowsconfwin(QMainWindow):
 
     #SFC /Scannow && Dism /RestoreHealth script (no shutdown)
     def run_sfc_scannow(self):
-        def is_admin():
-            try:
-                return ctypes.windll.shell32.IsUserAnAdmin()
-            except:
-                return False
-
-        if not is_admin():
-            ctypes.windll.shell32.ShellExecuteW(None, "runas", "cmd.exe", " /C sfc /scannow && DISM /Online /Cleanup-Image /Restorehealth ", None, 1)
-        else:
-            subprocess.call(["cmd.exe", "/C", "sfc", "/scannow"])
+        ctypes.windll.shell32.ShellExecuteW(None, "runas", "cmd.exe", " /C sfc /scannow && DISM /Online /Cleanup-Image /Restorehealth ", None, 1)
 
     #SFC /Scannow && Dism /RestoreHealth script WITH SHUTDOWN
     def run_sfc_scannow_shutdown(self):
-        def is_admin():
-            try:
-                return ctypes.windll.shell32.IsUserAnAdmin()
-            except:
-                return False
-
-        if not is_admin():
-            ctypes.windll.shell32.ShellExecuteW(None, "runas", "cmd.exe", " /C sfc /scannow && DISM /Online /Cleanup-Image /Restorehealth && shutdown /f /r /t 0 ", None, 1)
-        else:
-            subprocess.call(["cmd.exe", "/C", "sfc", "/scannow"])
+        ctypes.windll.shell32.ShellExecuteW(None, "runas", "cmd.exe", " /C sfc /scannow && DISM /Online /Cleanup-Image /Restorehealth && shutdown /f /r /t 0 ", None, 1)
 
 # Confirmation Window for Headset repairs
 class headsetconfwin(QMainWindow):
@@ -202,6 +184,7 @@ class biossledge(QMainWindow):
         self.bioscheckbox.setText('I will NOT turn off whilst BIOS updates. (MUST be checked)')
         self.bioscheckbox.setStyleSheet('font-size:12px')
         self.bioscheckbox.setChecked(False)
+        #self.bioscheckbox.stateChanged.connect(self.run_bs)
         self.bioscheckbox.stateChanged.connect(self.start_countdown)
         
         # Set the countdown timer to 5 seconds
@@ -226,38 +209,32 @@ class biossledge(QMainWindow):
             self.countdown_timer.stop()
             
     def update_countdown(self):
-        # Decrement the countdown value
+         #Decrement the countdown value
         self.countdown_value -= 1
 
-        # Update the label with the new countdown value
+         #Update the label with the new countdown value
         self.label.setText(str(self.countdown_value))
 
-        # If the countdown value is zero, stop the timer and run the program
+         #If the countdown value is zero, stop the timer and run the program
         if self.countdown_value == 0:
             self.countdown_timer.stop()
-            # Run your program here
-            if self.bioscheckbox.isChecked():
-                self.run_bs()
-
-    def run_bs(self):
-        def is_admin():
-            try:
-                return ctypes.windll.shell32.IsUserAnAdmin()
-            except:
-                return False
-
-        if not is_admin():
-            self.bs_script1()
+             #Run yourdww program here (maybe)
+            self.is_admin()
         else:
             return 0
 
+
+    def is_admin(self):
+        ctypes.windll.shell32.ShellExecuteW(None, "runas", "cmd.exe", "cmd /k" " BiosSledgehammer/RunVisable.bat ", None, 1)
+        
+"""
     def bs_script1(self):        
         self.bs_script = QProcess()
         self.bs_script.finished.connect(self.bs_script1_finished) #clean up once complete.
-        self.bs_script.start ("RunVisable.bat")
+        self.bs_script.start("BiosSledgehammer/RunVisable.bat")
 
     def bs_script1_finished(self):
         self.bs_script = None
-
+"""
 window = Ui()
 sys.exit(app.exec_())
