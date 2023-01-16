@@ -2,6 +2,7 @@ import sys
 import webbrowser
 import subprocess
 import ctypes
+import os
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
@@ -223,10 +224,8 @@ class biossledge(QMainWindow):
         else:
             return 0
 
-# ctypes.windll.shell32.ShellExecuteW(None, "runas", "cmd.exe", "cmd /k " + os.getcwd() + "\DesksideToolkit\BiosSledgehammer\RunVisable.bat", None, 1)
-
     def is_admin(self):
-        ctypes.windll.shell32.ShellExecuteW(None, "runas", "cmd.exe", "cmd /k" " BiosSledgehammer/RunVisable.bat ", None, 1)
+        ctypes.windll.shell32.ShellExecuteW(None, "runas", "cmd.exe", "cmd /k " + os.getcwd() + "\DesksideToolkit\BiosSledgehammer\RunVisable.bat", None, 1)
         
 """
     def bs_script1(self):        
