@@ -223,6 +223,7 @@ class biossledge(QMainWindow):
         else:
             return 0
 
+# ctypes.windll.shell32.ShellExecuteW(None, "runas", "cmd.exe", "cmd /k " + os.getcwd() + "\DesksideToolkit\BiosSledgehammer\RunVisable.bat", None, 1)
 
     def is_admin(self):
         ctypes.windll.shell32.ShellExecuteW(None, "runas", "cmd.exe", "cmd /k" " BiosSledgehammer/RunVisable.bat ", None, 1)
