@@ -7,6 +7,7 @@ from PyQt5 import QtWidgets, uic
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
+from BiosSledgehammer import *
 
 app = QtWidgets.QApplication(sys.argv)
 
@@ -219,22 +220,14 @@ class biossledge(QMainWindow):
          #If the countdown value is zero, stop the timer and run the program
         if self.countdown_value == 0:
             self.countdown_timer.stop()
-             #Run yourdww program here (maybe)
+             #Run your program here (maybe)
             self.is_admin()
         else:
             return 0
 
+    #path = os.getcwd() + "\DesksideToolkit\BiosSledgehammer\RunVisable.bat"
     def is_admin(self):
-        ctypes.windll.shell32.ShellExecuteW(None, "runas", "cmd.exe", "cmd /k " + os.getcwd() + "\DesksideToolkit\BiosSledgehammer\RunVisable.bat", None, 1)
+        ctypes.windll.shell32.ShellExecuteW(None, "runas", "cmd.exe", "cmd /k "  + os.getcwd() +  "\BiosSledgehammer\BiosSledgehammer.ps1", None, 1)
         
-"""
-    def bs_script1(self):        
-        self.bs_script = QProcess()
-        self.bs_script.finished.connect(self.bs_script1_finished) #clean up once complete.
-        self.bs_script.start("BiosSledgehammer/RunVisable.bat")
-
-    def bs_script1_finished(self):
-        self.bs_script = None
-"""
 window = Ui()
 sys.exit(app.exec_())
