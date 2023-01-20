@@ -227,7 +227,19 @@ class biossledge(QMainWindow):
 
     #path = os.getcwd() + "\DesksideToolkit\BiosSledgehammer\RunVisable.bat"
     def is_admin(self):
-        ctypes.windll.shell32.ShellExecuteW(None, "runas", "cmd.exe", "cmd /k "  + os.getcwd() +  "\BiosSledgehammer\BiosSledgehammer.ps1", None, 1)
+        os.environ["PS_PART_PATH"] = "WindowsPowerShell\v1.0\powershell.exe" 
+        os.environ["PS_EXE"] = "C:\Windows\System32\%PS_PART_PATH%" 
+        os.environ["PS_EXE_SYSNATIVE"] = "c:\windows\sysnative\%PS_PART_PATH%"
+
+        if os.path.exists(os.environ["PS_EXE_SYSNATIVE"]):
+            os.environ["PS_EXE"] = os.environ["PS_EXE_SYSNATIVE"]
+
+        cwd = os.getcwd()
+        file_path = os.path.join(cwd, 'BiosSledgehammer', 'BiosSledgehammer.ps1')
+        subprocess.run(['powershell.exe', '-Verb runAs', '-ExecutionPolicy', 'Bypass', '-File', file_path, '-WaitAtEnd'], shell=True)
+        
+        #subprocess.run(['powershell.exe', '-ExecutionPolicy', 'Bypass', '-File', "os.getcwd() + \BiosSledgehammer\BiosSledgehammer.ps1", '-WaitAtEnd'], shell=True)
+        #ctypes.windll.shell32.ShellExecuteW(None, "runas", "cmd.exe", "cmd /k " + os.getcwd() +  "\BiosSledgehammer\BiosSledgehammer.ps1", None, 1)
         
 window = Ui()
 sys.exit(app.exec_())
