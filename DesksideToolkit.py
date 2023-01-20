@@ -236,10 +236,12 @@ class biossledge(QMainWindow):
 
         cwd = os.getcwd()
         file_path = os.path.join(cwd, 'BiosSledgehammer', 'BiosSledgehammer.ps1')
-        subprocess.Popen(['powershell.exe', '-Verb runAs', '-ExecutionPolicy', 'Bypass', '-File', file_path, '-WaitAtEnd'], shell=True)
-        #subprocess.Popen([ "powershell.exe", "-noprofile", "-c",r"""Start-Process -Verb RunAs -Wait powershell.exe -Args "-noprofile -c Set-Location \`"$PWD\`"; & D:\Cyber_security\Python\login.ps1"""", ])
-        #subprocess.run(['powershell.exe', '-ExecutionPolicy', 'Bypass', '-File', "os.getcwd() + \BiosSledgehammer\BiosSledgehammer.ps1", '-WaitAtEnd'], shell=True)
-        #ctypes.windll.shell32.ShellExecuteW(None, "runas", "cmd.exe", "cmd /k " + os.getcwd() +  "\BiosSledgehammer\BiosSledgehammer.ps1", None, 1)
+        if ctypes.windll.shell32.IsUserAnAdmin() == 0:
+            # Request admin privilege
+            ctypes.windll.shell32.ShellExecuteW(None, "runas", "powershell.exe", f"-ExecutionPolicy Bypass -File {file_path} -WaitAtEnd", None, 1)
+        else:
+            # Run script as admin
+            subprocess.run(['powershell.exe', '-ExecutionPolicy', 'Bypass', '-File', file_path, '-WaitAtEnd'], shell=True)
         
 window = Ui()
 sys.exit(app.exec_())
