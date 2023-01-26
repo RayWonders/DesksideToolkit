@@ -46,6 +46,7 @@ class Ui(QtWidgets.QMainWindow):
 class windowsconfwin(QMainWindow):
     def __init__(self):
         super().__init__()
+        self.main_window = Ui()
         self.resize(380, 200)
         self.setWindowTitle("Windows 10 repair (Fingers Crossed)")
 
@@ -84,10 +85,18 @@ class windowsconfwin(QMainWindow):
     def run_sfc_scannow_shutdown(self):
         ctypes.windll.shell32.ShellExecuteW(None, "runas", "cmd.exe", " /C sfc /scannow && DISM /Online /Cleanup-Image /Restorehealth && shutdown /f /r /t 0 ", None, 1)
 
+        #back Button Function
+    def handleBackButton(self):
+        # Handle back button functionality here
+        self.hide()
+        self.main_window.show()
+        
+
 # Confirmation Window for Headset repairs
 class headsetconfwin(QMainWindow):
     def __init__(self):
         super().__init__()
+        self.main_window = Ui()
         self.resize(400, 250)
         self.setWindowTitle("Meijer Headset Repair")
 
@@ -122,10 +131,16 @@ class headsetconfwin(QMainWindow):
     def script1_finished(self):
         self.p = None
 
+    def handleBackButton(self):
+        # Handle back button functionality here
+        self.hide()
+        self.main_window.show()
+
 #Confirmation window for Manually installed Applications
 class manconfwin(QMainWindow):
     def __init__(self):
         super().__init__()
+        self.main_window = Ui()
         self.resize(400, 300)
         self.setWindowTitle("Manually install Apps")
 
@@ -167,6 +182,7 @@ class manconfwin(QMainWindow):
 class biossledge(QMainWindow):
     def __init__(self):
         super().__init__()
+        self.main_window = Ui()
         self.resize(380, 200)
         self.setWindowTitle("Update my BIOS!!!")
 
@@ -204,7 +220,7 @@ class biossledge(QMainWindow):
         self.label.setFont(font)
         self.label.setGeometry(168, 75, 40, 40)
 
-    def start_countdown(self, state):
+    def start_countdown(self):
         if self.bioscheckbox.isChecked():
             self.countdown_timer.start()
         else:
@@ -225,7 +241,7 @@ class biossledge(QMainWindow):
         else:
             return 0
 
-    #path = os.getcwd() + "\DesksideToolkit\BiosSledgehammer\RunVisable.bat"
+    #Function to verify device is using Windows and has 64bit Powershell, followed by running BiosSledgehammer.ps1 as admin
     def is_admin(self):
         os.environ["PS_PART_PATH"] = "WindowsPowerShell\v1.0\powershell.exe" 
         os.environ["PS_EXE"] = "C:\Windows\System32\%PS_PART_PATH%" 
@@ -234,8 +250,11 @@ class biossledge(QMainWindow):
         if os.path.exists(os.environ["PS_EXE_SYSNATIVE"]):
             os.environ["PS_EXE"] = os.environ["PS_EXE_SYSNATIVE"]
 
+        #File Path Variables        
         cwd = os.getcwd()
         file_path = os.path.join(cwd, 'BiosSledgehammer', 'BiosSledgehammer.ps1')
+
+        #if/else to request admin and run BiosSledge
         if ctypes.windll.shell32.IsUserAnAdmin() == 0:
             # Request admin privilege
             ctypes.windll.shell32.ShellExecuteW(None, "runas", "powershell.exe", f"-ExecutionPolicy Bypass -File {file_path} -WaitAtEnd", None, 1)
