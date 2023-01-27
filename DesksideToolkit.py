@@ -17,6 +17,8 @@ class Ui(QtWidgets.QMainWindow):
         uic.loadUi('DesksideToolkit.ui', self)
         self.show()
         self.setWindowTitle("Robb's Deskside Toolkit")
+        textEdit = QTextEdit() 
+        textEdit.setLineWrapMode(QTextEdit.WidgetWidth)
 
     #Slot signal for Headset repairs
     def headsetconfwin(self):
@@ -182,27 +184,27 @@ class manconfwin(QMainWindow):
 class biossledge(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.main_window = Ui()
-        self.resize(380, 200)
+        self.resize(380, 300)
         self.setWindowTitle("Update my BIOS!!!")
-
+        
         #label during countdown
         self.bioslbl = QLabel(self)
-        self.bioslbl.setGeometry(5, 0, 370, 55)
+        self.bioslbl.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        self.bioslbl.setGeometry(5, 30, 370, 55)
         self.bioslbl.setAlignment(Qt.AlignCenter)
 
         # Set the font of the label to a larger, bold style
-        font = QFont("Arial", 12,)
+        font = QFont("Arial", 10,)
         self.bioslbl.setFont(font)
         self.bioslbl.setText('BIOS update will begin momentarily...')
+        self.bioslbl.setWordWrap(True)
 
         #consent checkbox that device will NOT be turned off
         self.bioscheckbox = QCheckBox(self)
-        self.bioscheckbox.setGeometry(10, 135, 500, 55)
+        self.bioscheckbox.setGeometry(15, 225, 500, 55)
         self.bioscheckbox.setText('I will NOT turn off whilst BIOS updates. (MUST be checked)')
         self.bioscheckbox.setStyleSheet('font-size:12px')
         self.bioscheckbox.setChecked(False)
-        #self.bioscheckbox.stateChanged.connect(self.run_bs)
         self.bioscheckbox.stateChanged.connect(self.start_countdown)
         
         # Set the countdown timer to 5 seconds
@@ -216,9 +218,9 @@ class biossledge(QMainWindow):
         self.label.setAlignment(Qt.AlignCenter)
 
         # Set the font of the label
-        font = QFont("Open Sans", 24)
+        font = QFont("Open Sans", 20)
         self.label.setFont(font)
-        self.label.setGeometry(168, 75, 40, 40)
+        self.label.setGeometry(175, 120, 40, 40)
 
     def start_countdown(self):
         if self.bioscheckbox.isChecked():
