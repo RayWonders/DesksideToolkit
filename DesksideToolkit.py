@@ -1,5 +1,4 @@
 import sys
-import webbrowser
 import subprocess
 import ctypes
 import os
@@ -12,11 +11,12 @@ from BiosSledgehammer import *
 app = QtWidgets.QApplication(sys.argv)
 
 class Ui(QtWidgets.QMainWindow):
+
     def __init__(self):
         super(Ui, self).__init__()
         uic.loadUi('DesksideToolkit.ui', self)
         self.show()
-        self.setWindowTitle("Robb's Deskside Toolkit")
+        self.setWindowTitle("Robb's Deskside Toolkit :) ")
         textEdit = QTextEdit() 
         textEdit.setLineWrapMode(QTextEdit.WidgetWidth)
 
@@ -24,31 +24,51 @@ class Ui(QtWidgets.QMainWindow):
     def headsetconfwin(self):
         self.w = headsetconfwin()
         self.w.show()
-        self.hide()
+        
 
     #slot window for Windows repairs
     def windowsconfwin(self):
         self.wcw = windowsconfwin()
         self.wcw.show()
-        self.hide()
+        
 
     #Slot for Manually installed apps
     def manconfwin(self):
         self.mcw = manconfwin()
         self.mcw.show()
-        self.hide()
+        
 
     #Slot for BIOSSledgehammer start window
     def biossledge(self):
         self.bsh = biossledge()
         self.bsh.show()
-        self.hide
+        
+
+    #Slot for Driver selection
+    def driverconfwin(self):
+        self.dcw = driverconfwin()
+        self.dcw.show()
+
+    #Slot for stores (WIP)
+    def projectsconfwin(self):
+        self.scw = projectsconfwin()
+        self.scw.show()
+    
+    #Slot for macOS (WIP)
+    def macconfwin(self):
+        self.mcw = macconfwin()
+        self.mcw.show()
+
+    #Slot for Suite (WIP)
+    def suiteconfwin(self):
+        self.oscw = suiteconfwin()
+        self.oscw.show()
+        
 
 #window to activate DISM/SFC repair w checkbox
 class windowsconfwin(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.main_window = Ui()
         self.resize(380, 200)
         self.setWindowTitle("Windows 10 repair (Fingers Crossed)")
 
@@ -86,19 +106,11 @@ class windowsconfwin(QMainWindow):
     #SFC /Scannow && Dism /RestoreHealth script WITH SHUTDOWN
     def run_sfc_scannow_shutdown(self):
         ctypes.windll.shell32.ShellExecuteW(None, "runas", "cmd.exe", " /C sfc /scannow && DISM /Online /Cleanup-Image /Restorehealth && shutdown /f /r /t 0 ", None, 1)
-
-        #back Button Function
-    def handleBackButton(self):
-        # Handle back button functionality here
-        self.hide()
-        self.main_window.show()
         
-
 # Confirmation Window for Headset repairs
 class headsetconfwin(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.main_window = Ui()
         self.resize(400, 250)
         self.setWindowTitle("Meijer Headset Repair")
 
@@ -125,28 +137,17 @@ class headsetconfwin(QMainWindow):
 
     #Driver Refresh Script Variable
     def script1(self):
-        #if self.p is None: No process Running
-        self.p = QProcess()
-        self.p.finished.connect(self.script1_finished) #clean up once complete.
-        self.p.start ("Headsetrepair.bat")
-
-    def script1_finished(self):
-        self.p = None
-
-    def handleBackButton(self):
-        # Handle back button functionality here
-        self.hide()
-        self.main_window.show()
+        ctypes.windll.shell32.ShellExecuteW(None, "runas", "cmd.exe", "/C pnputil /delete-driver usbxhci.inf /uninstall /force /reboot", None, 1)
+        
 
 #Confirmation window for Manually installed Applications
 class manconfwin(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.main_window = Ui()
         self.resize(400, 300)
         self.setWindowTitle("Manually install Apps")
 
-        #Test Button for app links
+        #Power BI Button for app links
         self.powerbibtn = QPushButton(self)
         self.powerbibtn.setGeometry(15, 15, 150, 35)
         self.powerbibtn.setText('Power Bi Desktop')
@@ -154,7 +155,7 @@ class manconfwin(QMainWindow):
         # PowerBI Button Event
         self.powerbibtn.clicked.connect(self.powerbidownload)
 
-        #Test button for zoom Link
+        #ZoOM button for zoom Link
         self.zoombtn = QPushButton(self)
         self.zoombtn.setGeometry(15, 60, 150, 35)
         self.zoombtn.setText('ZooM')
@@ -162,23 +163,64 @@ class manconfwin(QMainWindow):
         # ZooM Button Event
         self.zoombtn.clicked.connect(self.zoomdownload)
 
+        #Button for chrome Link
+        self.chromebtn = QPushButton(self)
+        self.chromebtn.setGeometry(15, 105, 150, 35)
+        self.chromebtn.setText('Chrome')
+        self.chromebtn.setStyleSheet('font-size:12px')
+        # Chrome Button Event
+        self.chromebtn.clicked.connect(self.chromedownload)
+
+        #Button for Google Earth Pro link
+        self.gepbtn = QPushButton(self)
+        self.gepbtn.setGeometry(15, 150, 150, 35)
+        self.gepbtn.setText('Google Earth Pro')
+        self.gepbtn.setStyleSheet('font-size:12px')
+        # Google Earth Pro Button Event
+        self.gepbtn.clicked.connect(self.googleearthprodownload)
+
     #Zoom process to download zoom w URL (purpose of "import Browser")
     def zoomdownload(self):
-        #if self.p is None: No process Running
+        url = "https://zoom.us/client/5.12.8.10232/ZoomInstallerFull.exe?archType=x64"
         self.zdown = QProcess()
-        self.zdown.start (webbrowser.open_new_tab("https://zoom.us/client/5.12.8.10232/ZoomInstallerFull.exe?archType=x64"))
-
-    def zoomdownload_finished(self):
-        self.zdown = None
+        self.zdown.startDetached("cmd.exe", ["/c", "start", "", url])
 
     #PowerBI download Process w URL
     def powerbidownload(self):
-        #if self.p is None: No process Running
+        url = "https://download.microsoft.com/download/8/8/0/880BCA75-79DD-466A-927D-1ABF1F5454B0/PBIDesktopSetup_x64.exe"
         self.bidown = QProcess()
-        self.bidown.start (webbrowser.open_new_tab("https://download.microsoft.com/download/8/8/0/880BCA75-79DD-466A-927D-1ABF1F5454B0/PBIDesktopSetup_x64.exe"))
+        self.bidown.startDetached("cmd.exe", ["/c", "start", "", url])
+    
+    def chromedownload(self):
+        url = "https://www.google.com/chrome/thank-you.html?statcb=0&installdataindex=empty&defaultbrowser=0#"
+        self.chromedown = QProcess()
+        self.chromedown.startDetached("cmd.exe", ["/c", "start", "", url])
 
-    def powerbidownload_finished(self):
-        self.bidown = None
+    #Google Earth Pro (gep) Download
+    def googleearthprodownload(self):
+        url = "https://www.google.com/earth/versions/download-thank-you/?usagestats=0"
+        self.gepdown = QProcess()
+        self.gepdown.startDetached("cmd.exe", ["/c", "start", "", url])
+
+class driverconfwin(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.resize(400, 300)
+        self.setWindowTitle("Drivers for tings :)")
+
+    #Nvidia T1000 Button for aDriver download
+        self.t100btn = QPushButton(self)
+        self.t100btn.setGeometry(15, 15, 150, 35)
+        self.t100btn.setText('Nvidia T1000 Driver')
+        self.t100btn.setStyleSheet('font-size:12px')
+        # T1000 Button Event
+        self.t100btn.clicked.connect(self.t1000download)
+
+    #Nvidia T1000 Driver download process 
+    def t1000download(self):
+        url = "https://us.download.nvidia.com/Windows/Quadro_Certified/528.49/528.49-quadro-rtx-desktop-notebook-win10-win11-64bit-international-dch-whql.exe"
+        self.t1000down = QProcess()
+        self.t1000down.startDetached("cmd.exe", ["/c", "start", "", url])
 
 #BIOSSledgehammer start window
 class biossledge(QMainWindow):
@@ -263,6 +305,42 @@ class biossledge(QMainWindow):
         else:
             # Run script as admin
             subprocess.run(['powershell.exe', '-ExecutionPolicy', 'Bypass', '-File', file_path, '-WaitAtEnd'], shell=True)
-        
+
+#Stores stuff
+class projectsconfwin(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.resize(400, 300)
+        self.setWindowTitle("Store stuffs (work in progess) :)")
+
+
+#macOS stuff
+class macconfwin(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.resize(400, 300)
+        self.setWindowTitle("work in progress :)")
+
+
+#Sweet stuff :>
+class suiteconfwin(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.resize(400, 300)
+        self.setWindowTitle("Fingers Crossed :)")
+
+        #Office Repair/update Button
+        self.officeupdatebtn = QPushButton(self)
+        self.officeupdatebtn.setGeometry(15, 15, 150, 35)
+        self.officeupdatebtn.setText('Office Update')
+        self.officeupdatebtn.setStyleSheet('font-size:12px')
+
+        # Office Repair button event
+        self.officeupdatebtn.clicked.connect(self.officeupdatescript)
+
+         #Office Repair/update script
+    def officeupdatescript(self):
+        ctypes.windll.shell32.ShellExecuteW(None, "runas", "cmd.exe", "/C cd C:\Program Files\Common Files\microsoft shared\ClickToRun && OfficeC2RClient.exe /update user ", None, 1)
+
 window = Ui()
 sys.exit(app.exec_())

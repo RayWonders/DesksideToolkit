@@ -26,24 +26,25 @@ class Ui_MainWindow(object):
         self.ButtonHeadset.setFont(font)
         self.ButtonHeadset.setIconSize(QtCore.QSize(20, 20))
         self.ButtonHeadset.setObjectName("ButtonHeadset")
-        self.ButtonDock = QtWidgets.QPushButton(self.centralwidget)
-        self.ButtonDock.setGeometry(QtCore.QRect(60, 180, 221, 61))
+        self.ButtonDrivers = QtWidgets.QPushButton(self.centralwidget)
+        self.ButtonDrivers.setGeometry(QtCore.QRect(60, 180, 221, 61))
         font = QtGui.QFont()
         font.setPointSize(8)
-        self.ButtonDock.setFont(font)
-        self.ButtonDock.setObjectName("ButtonDock")
+        self.ButtonDrivers.setFont(font)
+        self.ButtonDrivers.setObjectName("ButtonDrivers")
         self.ButtonWindows = QtWidgets.QPushButton(self.centralwidget)
         self.ButtonWindows.setGeometry(QtCore.QRect(60, 260, 221, 61))
         font = QtGui.QFont()
         font.setPointSize(8)
         self.ButtonWindows.setFont(font)
         self.ButtonWindows.setObjectName("ButtonWindows")
-        self.ButtonOutlook = QtWidgets.QPushButton(self.centralwidget)
-        self.ButtonOutlook.setGeometry(QtCore.QRect(60, 340, 221, 61))
+        self.ButtonProjects = QtWidgets.QPushButton(self.centralwidget)
+        self.ButtonProjects.setGeometry(QtCore.QRect(60, 340, 221, 61))
         font = QtGui.QFont()
         font.setPointSize(8)
-        self.ButtonOutlook.setFont(font)
-        self.ButtonOutlook.setObjectName("ButtonOutlook")
+        self.ButtonProjects.setFont(font)
+        self.ButtonProjects.setStyleSheet("Stores")
+        self.ButtonProjects.setObjectName("ButtonProjects")
         self.TitleLabel = QtWidgets.QLabel(self.centralwidget)
         self.TitleLabel.setEnabled(True)
         self.TitleLabel.setGeometry(QtCore.QRect(10, 10, 621, 91))
@@ -60,12 +61,12 @@ class Ui_MainWindow(object):
         self.TitleLabel.setWordWrap(True)
         self.TitleLabel.setIndent(0)
         self.TitleLabel.setObjectName("TitleLabel")
-        self.pushButton_5 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_5.setGeometry(QtCore.QRect(370, 340, 221, 61))
+        self.ButtonMac = QtWidgets.QPushButton(self.centralwidget)
+        self.ButtonMac.setGeometry(QtCore.QRect(370, 340, 221, 61))
         font = QtGui.QFont()
         font.setPointSize(8)
-        self.pushButton_5.setFont(font)
-        self.pushButton_5.setObjectName("pushButton_5")
+        self.ButtonMac.setFont(font)
+        self.ButtonMac.setObjectName("ButtonMac")
         self.ButtonApp = QtWidgets.QPushButton(self.centralwidget)
         self.ButtonApp.setGeometry(QtCore.QRect(370, 180, 221, 61))
         font = QtGui.QFont()
@@ -92,22 +93,26 @@ class Ui_MainWindow(object):
         self.ButtonApp.clicked.connect(MainWindow.manconfwin) # type: ignore
         self.ButtonWindows.clicked.connect(MainWindow.windowsconfwin) # type: ignore
         self.ButtonBIOS.clicked.connect(MainWindow.biossledge) # type: ignore
+        self.ButtonDrivers.clicked.connect(MainWindow.driverconfwin) # type: ignore
+        self.ButtonProjects.clicked.connect(MainWindow.projectsconfwin) # type: ignore
+        self.ButtonMac.clicked.connect(MainWindow.macconfwin) # type: ignore
+        self.ButtonSuite.clicked.connect(MainWindow.suiteconfwin) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.ButtonHeadset.setText(_translate("MainWindow", "Headset Repairs"))
-        self.ButtonDock.setText(_translate("MainWindow", "Drivers plz"))
+        self.ButtonDrivers.setText(_translate("MainWindow", "Drivers plz"))
         self.ButtonWindows.setText(_translate("MainWindow", "Windows OS Repairs"))
-        self.ButtonOutlook.setText(_translate("MainWindow", "Coming Soon"))
+        self.ButtonProjects.setText(_translate("MainWindow", "Projects :("))
         self.TitleLabel.setText(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt;\">Hello Deskside Support Technician! How can I help?</span></p>\n"
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:24px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;\"><br /></p></body></html>"))
-        self.pushButton_5.setText(_translate("MainWindow", "Coming Soon"))
+        self.ButtonMac.setText(_translate("MainWindow", "Mac :)"))
         self.ButtonApp.setText(_translate("MainWindow", "Manually install apps"))
         self.ButtonBIOS.setText(_translate("MainWindow", "BIOS Update"))
-        self.ButtonSuite.setText(_translate("MainWindow", "Office Suite Update"))
+        self.ButtonSuite.setText(_translate("MainWindow", "Office Suite"))

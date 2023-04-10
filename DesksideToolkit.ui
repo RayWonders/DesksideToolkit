@@ -47,7 +47,7 @@
      </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="ButtonDock">
+   <widget class="QPushButton" name="ButtonDrivers">
     <property name="geometry">
      <rect>
       <x>60</x>
@@ -83,7 +83,7 @@
      <string>Windows OS Repairs</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="ButtonOutlook">
+   <widget class="QPushButton" name="ButtonProjects">
     <property name="geometry">
      <rect>
       <x>60</x>
@@ -97,8 +97,11 @@
       <pointsize>8</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">Stores</string>
+    </property>
     <property name="text">
-     <string>Coming Soon</string>
+     <string>Projects :(</string>
     </property>
    </widget>
    <widget class="QLabel" name="TitleLabel">
@@ -158,7 +161,7 @@ p, li { white-space: pre-wrap; }
      <number>0</number>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_5">
+   <widget class="QPushButton" name="ButtonMac">
     <property name="geometry">
      <rect>
       <x>370</x>
@@ -173,7 +176,7 @@ p, li { white-space: pre-wrap; }
      </font>
     </property>
     <property name="text">
-     <string>Coming Soon</string>
+     <string>Mac :)</string>
     </property>
    </widget>
    <widget class="QPushButton" name="ButtonApp">
@@ -233,7 +236,7 @@ p, li { white-space: pre-wrap; }
      </font>
     </property>
     <property name="text">
-     <string>Office Suite Update</string>
+     <string>Office Suite</string>
     </property>
    </widget>
   </widget>
@@ -247,12 +250,12 @@ p, li { white-space: pre-wrap; }
    <slot>headsetconfwin()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>170</x>
-     <y>210</y>
+     <x>243</x>
+     <y>122</y>
     </hint>
     <hint type="destinationlabel">
-     <x>195</x>
-     <y>72</y>
+     <x>326</x>
+     <y>116</y>
     </hint>
    </hints>
   </connection>
@@ -267,8 +270,8 @@ p, li { white-space: pre-wrap; }
      <y>286</y>
     </hint>
     <hint type="destinationlabel">
-     <x>442</x>
-     <y>161</y>
+     <x>370</x>
+     <y>212</y>
     </hint>
    </hints>
   </connection>
@@ -279,12 +282,12 @@ p, li { white-space: pre-wrap; }
    <slot>windowsconfwin()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>170</x>
-     <y>370</y>
+     <x>207</x>
+     <y>287</y>
     </hint>
     <hint type="destinationlabel">
-     <x>191</x>
-     <y>258</y>
+     <x>287</x>
+     <y>268</y>
     </hint>
    </hints>
   </connection>
@@ -304,11 +307,79 @@ p, li { white-space: pre-wrap; }
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>ButtonDrivers</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>driverconfwin()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>245</x>
+     <y>207</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>295</x>
+     <y>205</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButtonProjects</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>projectsconfwin()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>170</x>
+     <y>370</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>309</x>
+     <y>342</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButtonMac</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>macconfwin()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>480</x>
+     <y>370</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>315</x>
+     <y>221</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButtonSuite</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>suiteconfwin()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>480</x>
+     <y>130</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>315</x>
+     <y>221</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>headsetconfwin()</slot>
   <slot>windowsconfwin()</slot>
   <slot>manconfwin()</slot>
   <slot>biossledge()</slot>
+  <slot>driverconfwin()</slot>
+  <slot>macconfwin()</slot>
+  <slot>suiteconfwin()</slot>
+  <slot>projectsconfwin()</slot>
  </slots>
 </ui>
