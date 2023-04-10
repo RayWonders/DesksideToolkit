@@ -241,7 +241,7 @@ class biossledge(QMainWindow):
         self.bioslbl.setText('BIOS update will begin momentarily...')
         self.bioslbl.setWordWrap(True)
 
-        #consent checkbox that device will NOT be turned off
+        #consent checkbox that device will NOT be turned offfff
         self.bioscheckbox = QCheckBox(self)
         self.bioscheckbox.setGeometry(15, 225, 500, 55)
         self.bioscheckbox.setText('I will NOT turn off whilst BIOS updates. (MUST be checked)')
